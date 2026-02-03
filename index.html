@@ -18,7 +18,7 @@
       color: #1c1917;
       -webkit-font-smoothing: antialiased;
       letter-spacing: -0.011em;
-      overflow-x: hidden; /* mobile overflow guard */
+      overflow-x: hidden;
     }
 
     .serif {
@@ -44,7 +44,7 @@
     }
 
     .badge {
-      font-weight: 600;
+      font-weight: 700;
       padding: 0.4rem 0.9rem;
       border-radius: 6px;
       font-size: 0.6875rem;
@@ -75,7 +75,7 @@
     }
 
     .btn {
-      font-weight: 500;
+      font-weight: 600;
       padding: 0.8rem 1.9rem;
       border-radius: 7px;
       border: none;
@@ -191,7 +191,7 @@
       padding: 0.25rem 0.6rem;
       border-radius: 4px;
       font-size: 0.625rem;
-      font-weight: 600;
+      font-weight: 800;
       color: #57534e;
       text-transform: uppercase;
       letter-spacing: 0.05em;
@@ -215,7 +215,7 @@
       padding: 0.25rem 0.75rem;
       border-radius: 4px;
       font-size: 0.625rem;
-      font-weight: 700;
+      font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       white-space: nowrap;
@@ -241,8 +241,8 @@
     .zero-effort {
       background: linear-gradient(90deg, #f0fdf4 0%, #dcfce7 100%);
       border: 1px solid #bbf7d0;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
+      padding: 0.55rem 1rem;
+      border-radius: 10px;
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
@@ -256,14 +256,50 @@
       padding: 0.35rem 0.75rem;
       border-radius: 999px;
       font-size: 0.75rem;
-      font-weight: 600;
+      font-weight: 700;
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
       white-space: nowrap;
     }
 
-    /* ===================== MOBILE / RESPONSIVE PATCH ===================== */
+    /* Grøn forklaringsboks før hver sektion */
+    .explain-box {
+      background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+      border: 1px solid #bbf7d0;
+      border-left: 4px solid #10b981;
+      border-radius: 16px;
+      padding: 1.25rem 1.25rem;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    }
+    .explain-title {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      font-weight: 900;
+      color: #064e3b;
+      font-size: .9rem;
+      letter-spacing: -0.01em;
+    }
+    .explain-text {
+      margin-top: .55rem;
+      color: #065f46;
+      font-weight: 600;
+      line-height: 1.6;
+      font-size: .95rem;
+      max-width: 78ch;
+    }
+    .explain-list {
+      margin-top: .65rem;
+      color: #065f46;
+      font-weight: 600;
+      line-height: 1.6;
+      font-size: .95rem;
+      padding-left: 1.2rem;
+    }
+    .explain-list li { margin: .25rem 0; }
+
+    /* Mobile / responsive */
     @media (max-width: 1024px) {
       .value-primary { font-size: 2.6rem; }
       .value-secondary { font-size: 2.1rem; }
@@ -275,121 +311,117 @@
       .btn-ghost { padding: 0.55rem 0.9rem; }
       .badge, .source-tag, .crm-badge, .pill-safe, .zero-effort { white-space: normal; }
     }
-    /* ===================== NAV (aktiv state) ===================== */
-.nav-active {
-  background: white !important;
-  border: 1px solid #e7e5e4 !important;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.04) !important;
-}
 
-/* Dropdown menu */
-.menu-panel {
-  background: white;
-  border: 1px solid #e7e5e4;
-  box-shadow:
-    0 2px 6px rgba(0,0,0,0.06),
-    0 20px 60px rgba(0,0,0,0.08);
-  border-radius: 14px;
-  overflow: hidden;
-}
+    /* NAV aktiv state */
+    .nav-active {
+      background: white !important;
+      border: 1px solid #e7e5e4 !important;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04) !important;
+    }
 
-.menu-item {
-  width: 100%;
-  text-align: left;
-  padding: 0.9rem 1rem;
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: #1c1917;
-  transition: background 0.2s ease;
-}
-.menu-item:hover { background: #fafaf9; }
-.menu-sub {
-  display: block;
-  margin-top: 0.25rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #78716c;
-}
+    /* Dropdown menu */
+    .menu-panel {
+      background: white;
+      border: 1px solid #e7e5e4;
+      box-shadow:
+        0 2px 6px rgba(0,0,0,0.06),
+        0 20px 60px rgba(0,0,0,0.08);
+      border-radius: 14px;
+      overflow: hidden;
+    }
 
-/* Mobile: dropdown skal falde pænt ud */
-@media (max-width: 640px) {
-  #mereMenu { right: auto; left: 0; }
-}
+    .menu-item {
+      width: 100%;
+      text-align: left;
+      padding: 0.9rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 900;
+      color: #1c1917;
+      transition: background 0.2s ease;
+    }
+    .menu-item:hover { background: #fafaf9; }
+    .menu-sub {
+      display: block;
+      margin-top: 0.25rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #78716c;
+    }
+
+    @media (max-width: 640px) {
+      #mereMenu { right: auto; left: 0; }
+    }
   </style>
 </head>
 
 <body>
   <!-- Header -->
   <header class="bg-white border-b border-stone-200 sticky top-0 z-50 backdrop-blur-sm bg-white/95">
-    <!-- responsive padding + wrap -->
     <div class="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-16 py-5 lg:py-7 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
       <div class="flex items-center justify-between">
         <div>
           <h1 class="serif text-[1.75rem] sm:text-[2rem] text-stone-900 tracking-tight">Bech-Bruun</h1>
-          <p class="text-[0.6875rem] font-medium text-stone-500 tracking-wider uppercase mt-0.5">Executive Intelligence Platform</p>
+          <p class="text-[0.6875rem] font-semibold text-stone-500 tracking-wider uppercase mt-0.5">Opportunity Center (demo)</p>
         </div>
       </div>
 
-      <!-- Right cluster becomes wrap + grid feel -->
       <div class="flex flex-col lg:flex-row lg:items-center gap-3 lg:gap-6 w-full lg:w-auto">
 
-       <!-- Navigation: 2 primære + "Mere" dropdown -->
-<div class="flex items-center gap-2 bg-stone-50 border border-stone-200 rounded-xl p-1 w-full lg:w-auto">
+        <!-- Navigation -->
+        <div class="flex items-center gap-2 bg-stone-50 border border-stone-200 rounded-xl p-1 w-full lg:w-auto">
 
-  <!-- Primære (øverst) -->
-  <button id="navMulighed" class="btn btn-ghost !px-4 !py-2 !text-sm font-semibold rounded-lg flex-1 lg:flex-none"
-          onclick="showPage('mulighed')">
-    Mulighedsoverblik
-  </button>
+          <button id="navMulighed" class="btn btn-ghost !px-4 !py-2 !text-sm font-semibold rounded-lg flex-1 lg:flex-none"
+                  onclick="showPage('mulighed')">
+            Mulighedsoverblik
+          </button>
 
-  <button id="navKunde" class="btn btn-ghost !px-4 !py-2 !text-sm font-semibold rounded-lg flex-1 lg:flex-none"
-          onclick="showPage('kunde')">
-    Kundeudvikling
-  </button>
+          <button id="navKunde" class="btn btn-ghost !px-4 !py-2 !text-sm font-semibold rounded-lg flex-1 lg:flex-none"
+                  onclick="showPage('kunde')">
+            Kundeudvikling
+          </button>
 
-  <!-- Mere dropdown (sekundære sider) -->
-  <div class="relative flex-1 lg:flex-none" id="mereMenuWrap">
-    <button id="navMere"
-            class="btn btn-ghost !px-4 !py-2 !text-sm font-semibold rounded-lg w-full lg:w-auto justify-center flex items-center gap-2"
-            onclick="toggleMereMenu()">
-      Mere
-      <svg class="w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-      </svg>
-    </button>
+          <div class="relative flex-1 lg:flex-none" id="mereMenuWrap">
+            <button id="navMere"
+                    class="btn btn-ghost !px-4 !py-2 !text-sm font-semibold rounded-lg w-full lg:w-auto justify-center flex items-center gap-2"
+                    onclick="toggleMereMenu()">
+              Mere
+              <svg class="w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
 
-    <div id="mereMenu" class="hidden absolute right-0 mt-2 w-full lg:w-[280px] menu-panel z-[90]">
-      <button class="menu-item" onclick="showPage('partner'); closeMereMenu();">
-        Partneroverblik
-        <span class="menu-sub">Hurtigt overblik pr. partner</span>
-      </button>
+            <div id="mereMenu" class="hidden absolute right-0 mt-2 w-full lg:w-[280px] menu-panel z-[90]">
+              <button class="menu-item" onclick="showPage('partner'); closeMereMenu();">
+                Partneroverblik
+                <span class="menu-sub">Overblik pr. partner på 30 sekunder</span>
+              </button>
 
-      <div class="h-px bg-stone-100"></div>
+              <div class="h-px bg-stone-100"></div>
 
-      <button class="menu-item" onclick="showPage('data'); closeMereMenu();">
-        Dataindsamling
-        <span class="menu-sub">Sådan henter vi data uden partnerarbejde</span>
-      </button>
-    </div>
-  </div>
-</div>
+              <button class="menu-item" onclick="showPage('data'); closeMereMenu();">
+                Dataindsamling
+                <span class="menu-sub">Sådan skaber vi værdi uden partnerarbejde</span>
+              </button>
+            </div>
+          </div>
+        </div>
 
         <!-- Partner Switcher + Upside Snapshot -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full lg:w-auto">
           <div class="px-4 py-2 bg-stone-50 rounded-lg border border-stone-200">
-            <p class="text-[0.65rem] font-semibold text-stone-500 uppercase tracking-wider">Partner view</p>
+            <p class="text-[0.65rem] font-extrabold text-stone-500 uppercase tracking-wider">Partner-visning</p>
             <div class="flex items-center space-x-2 mt-1">
               <select id="partnerSelect" class="text-sm font-semibold text-stone-900 bg-transparent outline-none w-full">
                 <option value="camilla" selected>Camilla Huus</option>
                 <option value="morten">Morten L.</option>
                 <option value="sara">Sara K.</option>
               </select>
-              <span id="partnerBadge" class="badge badge-automated">Upside only</span>
+              <span id="partnerBadge" class="badge badge-automated">Kun upside</span>
             </div>
           </div>
 
           <div class="px-4 py-2 bg-emerald-50 rounded-lg border border-emerald-100">
-            <p class="text-[0.65rem] font-semibold text-emerald-700 uppercase tracking-wider">Din upside (7 dage)</p>
+            <p class="text-[0.65rem] font-extrabold text-emerald-700 uppercase tracking-wider">Din upside (7 dage)</p>
             <div class="flex items-baseline space-x-2 mt-1">
               <p id="partnerUpside" class="text-lg font-semibold text-emerald-800">+2.4M</p>
               <p id="partnerTimeSaved" class="text-xs text-emerald-700">• 11.3h sparet</p>
@@ -401,26 +433,26 @@
         <div class="flex items-center justify-between gap-3 px-4 py-2 bg-blue-50 rounded-lg border border-blue-100 w-full lg:w-auto">
           <div class="flex items-center gap-3">
             <div class="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></div>
-            <span class="crm-badge">Live CRM Integration</span>
+            <span class="crm-badge">CRM koblet på</span>
           </div>
-          <span class="text-xs text-blue-700 font-medium">Synced 2 min ago</span>
+          <span class="text-xs text-blue-700 font-semibold">Synk for 2 min siden</span>
         </div>
 
         <!-- Date + User row -->
         <div class="flex items-center justify-between gap-3 w-full lg:w-auto">
           <div class="text-left lg:text-right">
-            <p class="text-[0.6875rem] font-semibold text-stone-400 uppercase tracking-wider">Tirsdag</p>
-            <p class="text-sm font-medium text-stone-700">13. Januar 2026 • 09:42</p>
+            <p class="text-[0.6875rem] font-extrabold text-stone-400 uppercase tracking-wider">Tirsdag</p>
+            <p class="text-sm font-semibold text-stone-700">13. januar 2026 • 09:42</p>
           </div>
 
           <div class="hidden lg:block h-10 w-px bg-stone-200"></div>
 
           <div class="flex items-center gap-3">
             <div class="text-right">
-              <p class="text-sm font-semibold text-stone-900">Camilla Huus</p>
-              <p class="text-xs text-stone-500">Chief Operating Officer</p>
+              <p class="text-sm font-extrabold text-stone-900">Camilla Huus</p>
+              <p class="text-xs text-stone-500">COO</p>
             </div>
-            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-800 to-teal-900 flex items-center justify-center text-white font-semibold shadow-lg ring-2 ring-white">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-800 to-teal-900 flex items-center justify-center text-white font-extrabold shadow-lg ring-2 ring-white">
               CH
             </div>
           </div>
@@ -436,6 +468,25 @@
     <!-- ====================== PAGE: OPPORTUNITY CENTER ====================== -->
     <div id="pageMulighed" class="block">
 
+      <!-- Forklaring før topbanner -->
+      <div class="explain-box mb-6 animate-in">
+        <div class="explain-title">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          Hvad er dette?
+        </div>
+        <p class="explain-text">
+          Dette er et “intelligenslag” ovenpå CRM, der finder mulige sager og kunder uden at partnerne skal indtaste noget.
+          Du ser kun de muligheder, hvor systemet vurderer høj sandsynlighed – og du kan altid vælge <strong>Overvågning (0 min)</strong>.
+        </p>
+        <ul class="explain-list">
+          <li><strong>Systemet gør forarbejdet:</strong> indsamler signaler, sammenkæder data og forklarer hvorfor.</li>
+          <li><strong>Partneren gør kun én ting:</strong> godkend / afvis / overvåg.</li>
+          <li><strong>Alt logges automatisk:</strong> når du godkender, oprettes tingene i CRM.</li>
+        </ul>
+      </div>
+
       <!-- Value Proposition Banner -->
       <div class="value-highlight rounded-2xl p-6 sm:p-8 mb-8 sm:mb-10 animate-in">
         <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
@@ -444,61 +495,76 @@
               <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
               </svg>
-              <h3 class="text-lg font-semibold text-emerald-900">Zero-Effort Revenue Generation</h3>
+              <h3 class="text-lg font-extrabold text-emerald-900">Muligheder uden manuelt arbejde</h3>
               <span class="pill-safe">
                 <svg class="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2"></path>
                 </svg>
-                Partner-safe: ingen pres
+                Partner-venligt: ingen pres
               </span>
             </div>
             <p class="text-stone-700 leading-relaxed max-w-4xl">
-              Systemet genererer automatisk kvalificerede leads fra 40+ datakilder (CVR, LinkedIn, årsrapporter, markedsdata, nyhedsfeeds) og præsenterer kun opportunities med 70%+ win-probability.
-              <strong>Partners bruger max 15 minutter dagligt på high-value decisions—alt andet er automatiseret.</strong>
-              CRM-integration sikrer at alle aktiviteter trackes uden manuel input.
+              Systemet finder og kvalificerer muligheder ud fra mange datakilder (fx CVR, LinkedIn, årsrapporter, markedssignaler og nyheder).
+              <strong>Du får kun de cases, hvor der er en tydelig “grund” og en konkret anbefaling.</strong>
+              Når du godkender, oprettes alt automatisk i CRM – uden manuel indtastning.
             </p>
           </div>
           <div class="text-left lg:text-right flex-shrink-0">
-            <p class="text-sm font-semibold text-emerald-700 mb-1">Partner time saved today</p>
-            <p class="text-5xl font-light text-emerald-600">6.2h</p>
-            <p class="text-xs text-stone-600 mt-2">= 93k DKK i opportunity cost</p>
+            <p class="text-sm font-extrabold text-emerald-700 mb-1">Partner-tid frigjort i dag</p>
+            <p class="text-5xl font-light text-emerald-600">6,2 timer</p>
+            <p class="text-xs text-stone-600 mt-2">= tid til faktiske klientopgaver</p>
           </div>
         </div>
       </div>
 
-      <!-- RAG Trust Bar -->
+      <!-- Forklaring før datatroværdighed -->
+      <div class="explain-box mb-4 animate-in delay-100">
+        <div class="explain-title">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M12 22a10 10 0 100-20 10 10 0 000 20z"></path>
+          </svg>
+          Datatroværdighed (tidligere “RAG”)
+        </div>
+        <p class="explain-text">
+          Her kan du se, om systemets anbefaling er bygget på <strong>nok og nye data</strong>.
+          Grøn = trygt at handle. Gul = interessant, men der mangler noget. Rød = for lidt data.
+          Det gør anbefalingerne forståelige og “auditérbare”.
+        </p>
+      </div>
+
+      <!-- Datatroværdighed Bar -->
       <div class="card rounded-2xl p-6 mb-8 sm:mb-10 animate-in delay-100">
         <div class="flex flex-col xl:flex-row xl:items-start xl:justify-between gap-6">
           <div class="flex-1">
             <div class="flex items-center flex-wrap gap-2 mb-2">
               <span class="badge badge-opportunity" id="ragStatusPill">
                 <div class="w-1.5 h-1.5 bg-teal-700 rounded-full"></div>
-                RAG: GREEN
+                Datatroværdighed: GRØN
               </span>
               <span class="text-xs text-stone-500">•</span>
-              <span class="text-xs font-medium text-stone-600" id="ragFreshness">Freshness: 0–2 dage</span>
+              <span class="text-xs font-semibold text-stone-600" id="ragFreshness">Opdateret: 0–2 dage</span>
               <span class="text-xs text-stone-500">•</span>
-              <span class="text-xs font-medium text-stone-600" id="ragCoverage">Coverage: 8/10 essentials</span>
+              <span class="text-xs font-semibold text-stone-600" id="ragCoverage">Dækning: 8/10 vigtige punkter</span>
               <span class="text-xs text-stone-500">•</span>
-              <span class="text-xs font-medium text-stone-600">Audit: citations + diff</span>
+              <span class="text-xs font-semibold text-stone-600">Sporbarhed: kilder + ændringer</span>
             </div>
 
             <p class="text-sm text-stone-700 leading-relaxed">
-              RAG-laget gør anbefalinger <strong>forklarlige og trygge</strong>: kilder, freshness, coverage og “hvad mangler?” vises tydeligt.
-              Partneren kan handle — eller lade platformen køre videre som <strong>Monitoring</strong> (alt logges i CRM).
+              Systemet viser <strong>hvorfor</strong> en case findes: hvilke kilder den bygger på, hvor nye de er, og hvad der evt. mangler.
+              Du kan derfor handle – eller vælge <strong>Overvågning</strong> (systemet fortsætter og logger automatisk i CRM).
             </p>
 
             <div class="flex flex-wrap gap-2 mt-4" id="ragSources">
               <span class="source-tag">CVR</span>
               <span class="source-tag">Årsrapport</span>
               <span class="source-tag">LinkedIn</span>
-              <span class="source-tag">News</span>
-              <span class="source-tag">Internal CRM notes</span>
+              <span class="source-tag">Nyheder</span>
+              <span class="source-tag">Interne noter</span>
             </div>
           </div>
 
           <div class="text-left xl:text-right xl:min-w-[320px]">
-            <p class="text-[0.6875rem] font-semibold text-stone-400 uppercase tracking-wider mb-2">RAG Confidence</p>
+            <p class="text-[0.6875rem] font-extrabold text-stone-400 uppercase tracking-wider mb-2">Tillidsscore</p>
             <p class="value-secondary text-stone-900 mb-2" id="ragConfidence">94%</p>
 
             <div class="progress-bar">
@@ -506,46 +572,60 @@
             </div>
 
             <div class="flex items-center xl:justify-end gap-2 mt-4 flex-wrap">
-              <button class="btn btn-secondary" onclick="openRagDrawer()">Vis source trail</button>
-              <button class="btn btn-ghost" onclick="toggleMonitoring()">Monitoring: <span id="monitoringState" class="font-semibold">ON</span></button>
+              <button class="btn btn-secondary" onclick="openRagDrawer()">Se kilder og forklaring</button>
+              <button class="btn btn-ghost" onclick="toggleMonitoring()">Overvågning: <span id="monitoringState" class="font-extrabold">TIL</span></button>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Executive Summary Bar (responsive) -->
+      <!-- Forklaring før overblik -->
+      <div class="explain-box mb-4 animate-in delay-100">
+        <div class="explain-title">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h10M4 18h16"></path>
+          </svg>
+          Overblik (hvad kan jeg bruge det til?)
+        </div>
+        <p class="explain-text">
+          Dette er en hurtig “cockpit-visning”: hvor meget upside der ligger klar, hvor mange ting der kræver din opmærksomhed,
+          og hvor meget systemet allerede har gjort automatisk. Formålet er at gøre det let at prioritere på 30 sekunder.
+        </p>
+      </div>
+
+      <!-- Executive Summary Bar -->
       <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-6 mb-10 sm:mb-14 animate-in delay-100">
         <div class="card rounded-xl p-7 status-border status-opportunity">
           <div class="flex items-center justify-between mb-2 gap-2">
-            <p class="text-[0.6875rem] font-semibold text-stone-500 uppercase tracking-wider">Revenue klar til aktivering</p>
-            <span class="zero-effort text-[0.625rem] font-bold text-emerald-700">
+            <p class="text-[0.6875rem] font-extrabold text-stone-500 uppercase tracking-wider">Upside klar til beslutning</p>
+            <span class="zero-effort text-[0.625rem] font-black text-emerald-700">
               <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
               </svg>
-              Auto-generated
+              Ingen indtastning
             </span>
           </div>
-          <p class="value-primary mb-2">8.9M</p>
-          <p class="text-xs text-stone-600 leading-relaxed">3 decisions • 15 min total</p>
+          <p class="value-primary mb-2">8,9M</p>
+          <p class="text-xs text-stone-600 leading-relaxed">3 beslutninger • ca. 15 min samlet</p>
         </div>
 
         <div class="card rounded-xl p-7">
-          <p class="text-[0.6875rem] font-semibold text-stone-500 uppercase tracking-wider mb-3">Kræver opmærksomhed</p>
+          <p class="text-[0.6875rem] font-extrabold text-stone-500 uppercase tracking-wider mb-3">Kræver opmærksomhed</p>
           <p class="value-secondary mb-2">5</p>
-          <p class="text-xs text-stone-600 leading-relaxed">4 tid-sensitive • 1 conflict</p>
+          <p class="text-xs text-stone-600 leading-relaxed">4 tidssensitive • 1 konfliktflag</p>
         </div>
 
         <div class="card rounded-xl p-7 bg-gradient-to-br from-emerald-50 to-white">
-          <p class="text-[0.6875rem] font-semibold text-emerald-700 uppercase tracking-wider mb-3">Automatiseret i dag</p>
+          <p class="text-[0.6875rem] font-extrabold text-emerald-700 uppercase tracking-wider mb-3">Automatisk gjort i dag</p>
           <p class="value-secondary text-emerald-700 mb-2">47</p>
-          <p class="text-xs text-stone-600 leading-relaxed">34 leads screened • 14 emails sendt</p>
+          <p class="text-xs text-stone-600 leading-relaxed">34 screenet • 14 udkast klar</p>
         </div>
 
         <div class="card rounded-xl p-7">
-          <p class="text-[0.6875rem] font-semibold text-stone-500 uppercase tracking-wider mb-3">Pipeline velocity</p>
+          <p class="text-[0.6875rem] font-extrabold text-stone-500 uppercase tracking-wider mb-3">Pipeline-hastighed</p>
           <div class="flex items-baseline space-x-3 mb-3">
             <p class="value-secondary">186M</p>
-            <span class="text-lg font-semibold text-emerald-600">+24%</span>
+            <span class="text-lg font-extrabold text-emerald-600">+24%</span>
           </div>
           <div class="progress-bar">
             <div class="progress-fill" style="width: 82%"></div>
@@ -553,14 +633,34 @@
         </div>
 
         <div class="card rounded-xl p-7">
-          <p class="text-[0.6875rem] font-semibold text-stone-500 uppercase tracking-wider mb-3">CRM Health Score</p>
+          <p class="text-[0.6875rem] font-extrabold text-stone-500 uppercase tracking-wider mb-3">CRM-datakvalitet</p>
           <p class="value-secondary text-blue-600 mb-2">94%</p>
-          <p class="text-xs text-stone-600 leading-relaxed">All data synced • No manual entry</p>
+          <p class="text-xs text-stone-600 leading-relaxed">Synk ok • ingen manuel indtastning</p>
         </div>
       </div>
 
       <!-- Priority Actions -->
       <section class="mb-16 sm:mb-20 animate-in delay-200">
+
+        <!-- Forklaring før “Kræver din godkendelse” -->
+        <div class="explain-box mb-6">
+          <div class="explain-title">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            “Kræver din godkendelse” – hvad betyder det?
+          </div>
+          <p class="explain-text">
+            Her ligger de muligheder, hvor systemet har gjort forarbejdet og vurderer, at der er god chance for gevinst.
+            Du skal kun vælge én af tre ting: <strong>Godkend</strong>, <strong>Afvis</strong> eller <strong>Overvåg</strong>.
+          </p>
+          <ul class="explain-list">
+            <li><strong>Godkend:</strong> systemet opretter konto/kontakt/mulighed/opgaver i CRM.</li>
+            <li><strong>Overvåg:</strong> 0 min – systemet følger sagen videre og giver besked hvis signalet bliver stærkere.</li>
+            <li><strong>Afvis:</strong> logges, så systemet lærer (og du ikke ser den igen unødigt).</li>
+          </ul>
+        </div>
+
         <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-8">
           <div class="flex items-center flex-wrap gap-3">
             <div class="pulse-indicator"></div>
@@ -569,13 +669,13 @@
               <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.476.859h4.002z"></path>
               </svg>
-              <span class="text-xs font-bold text-emerald-700">AI har gjort forarbejdet</span>
+              <span class="text-xs font-black text-emerald-700">Forarbejde gjort</span>
             </span>
             <span class="pill-safe">
               <svg class="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2"></path>
               </svg>
-              Alternativ: Monitoring (0 min)
+              Alternativ: Overvågning (0 min)
             </span>
           </div>
           <div class="text-sm text-stone-500">
@@ -584,6 +684,7 @@
         </div>
 
         <div class="space-y-6">
+
           <!-- Priority Action 1 -->
           <div class="card rounded-2xl p-6 sm:p-10 insight-card status-border status-critical">
             <div class="flex flex-col xl:flex-row xl:items-start xl:justify-between gap-8 mb-8">
@@ -591,58 +692,72 @@
                 <div class="flex items-center flex-wrap gap-2 mb-4">
                   <span class="badge badge-critical">
                     <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
-                    Kritisk timing
+                    Tidssensitivt
                   </span>
                   <span class="text-xs text-stone-500">•</span>
-                  <span class="text-xs font-medium text-stone-600">Window lukker: 48 timer</span>
-                  <span class="source-tag">CVR API</span>
-                  <span class="source-tag">LinkedIn Sales Nav</span>
-                  <span class="source-tag">Regnskabsdata Q4 2025</span>
-                  <span class="crm-badge">CRM-klar</span>
+                  <span class="text-xs font-semibold text-stone-600">Vindue lukker: 48 timer</span>
+                  <span class="source-tag">CVR</span>
+                  <span class="source-tag">LinkedIn</span>
+                  <span class="source-tag">Regnskab Q4</span>
+                  <span class="crm-badge">CRM klar</span>
                 </div>
 
-                <h3 class="serif text-[1.6rem] sm:text-[2rem] text-stone-900 mb-4 tracking-tight">Nordic Blue Robotics ApS — Frasalg</h3>
+                <h3 class="serif text-[1.6rem] sm:text-[2rem] text-stone-900 mb-4 tracking-tight">Nordic Blue Robotics ApS — muligt frasalg</h3>
+
+                <!-- Grøn forklaring før casen -->
+                <div class="explain-box mb-6">
+                  <div class="explain-title">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M12 22a10 10 0 100-20 10 10 0 000 20z"></path>
+                    </svg>
+                    Hvorfor ser du denne case?
+                  </div>
+                  <p class="explain-text">
+                    Systemet har registreret et mønster, der ofte ses før større transaktioner. Det betyder ikke “sikker sag” –
+                    men det er en situation, hvor der typisk købes rådgivning, og hvor timing kan give jer en fordel.
+                  </p>
+                </div>
 
                 <div class="prose prose-stone max-w-none mb-6">
                   <p class="text-stone-700 leading-relaxed">
-                    <strong>RAG Analysis Summary:</strong> Cross-referencing af 8 dokumenter (årsrapport, CVR-udtræk, LinkedIn C-suite movements, industri-benchmarks) viser klassisk pre-divestment pattern:
+                    Systemet har sammenholdt flere kilder og fremhæver tre ting:
                   </p>
                   <ul class="list-disc pl-5 space-y-2 text-stone-700 mt-3">
-                    <li><strong>Likviditetspres:</strong> Working capital dage faldet fra 34 til 18 (Q3→Q4). Industry average: 45 dage.</li>
-                    <li><strong>IP-værdi uudnyttet:</strong> 12 registrerede patenter (warehouse automation AI), estimeret værdi 8–14M DKK baseret på comparable transactions.</li>
-                    <li><strong>Management transition:</strong> CFO Andreas Møller skifter rolle d. 16/01 kl. 14:00 (relationship edge: høj).</li>
+                    <li><strong>Likviditetspres:</strong> arbejds-kapitaldage faldet fra 34 til 18 (Q3→Q4).</li>
+                    <li><strong>IP-værdi:</strong> flere registrerede patenter (automation/AI) med mulig værdi ved transaktion.</li>
+                    <li><strong>Ledelsesskifte:</strong> CFO skifter rolle snart (timing til intro er bedre lige nu).</li>
                   </ul>
 
-                  <p class="text-teal-800 font-medium mt-4 bg-teal-50 p-4 rounded-lg border-l-4 border-teal-600">
-                    <strong>Next best action:</strong> Ring til Andreas i dag før kl. 16:00. AI har draftet call script baseret på jeres relation + current situation.
-                    <span class="block text-xs text-teal-700 mt-2">Partner-safe: Hvis du ikke ringer, fortsætter systemet i Monitoring og opdaterer signals + logger i CRM.</span>
+                  <p class="text-teal-800 font-semibold mt-4 bg-teal-50 p-4 rounded-lg border-l-4 border-teal-600">
+                    <strong>Anbefalet næste skridt:</strong> ring i dag før kl. 16:00. Systemet kan give et kort oplæg til samtalen.
+                    <span class="block text-xs text-teal-700 mt-2">Hvis du ikke ringer: vælg <strong>Overvågning</strong> – systemet følger signalerne og opdaterer automatisk.</span>
                   </p>
 
                   <p class="text-stone-700 leading-relaxed mt-4">
-                    <strong>Competitive intelligence:</strong> Konkurrent-aktivitet spottet i LinkedIn-signal-trail. <strong>Jeres relationship edge = 73% win probability.</strong>
+                    <strong>Konsekvens for dig:</strong> enten 1 klik for at oprette alt i CRM – eller 0 minutter ved overvågning.
                   </p>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 p-6 bg-stone-50 rounded-xl mb-6">
                   <div>
-                    <p class="text-[0.6875rem] font-semibold text-stone-400 uppercase tracking-wider mb-1.5">Datakilder</p>
-                    <p class="text-sm font-medium text-stone-900">8 sources analyzed</p>
-                    <p class="text-xs text-stone-500 mt-1">Confidence: 94%</p>
+                    <p class="text-[0.6875rem] font-extrabold text-stone-400 uppercase tracking-wider mb-1.5">Kilder</p>
+                    <p class="text-sm font-semibold text-stone-900">8 kilder brugt</p>
+                    <p class="text-xs text-stone-500 mt-1">Tillidsscore: 94%</p>
                   </div>
                   <div>
-                    <p class="text-[0.6875rem] font-semibold text-stone-400 uppercase tracking-wider mb-1.5">Conflict Check</p>
-                    <p class="text-sm font-semibold text-emerald-600">✓ Auto-cleared</p>
-                    <p class="text-xs text-stone-500 mt-1">Checked: 13/01 09:15</p>
+                    <p class="text-[0.6875rem] font-extrabold text-stone-400 uppercase tracking-wider mb-1.5">Konflikt-check</p>
+                    <p class="text-sm font-extrabold text-emerald-600">✓ Automatisk ok</p>
+                    <p class="text-xs text-stone-500 mt-1">Tjekket: 13/01 09:15</p>
                   </div>
                   <div>
-                    <p class="text-[0.6875rem] font-semibold text-stone-400 uppercase tracking-wider mb-1.5">Team Allocation</p>
-                    <p class="text-sm font-medium text-stone-900">Morten L. (Lead)</p>
-                    <p class="text-xs text-stone-500 mt-1">2 associates auto-assigned</p>
+                    <p class="text-[0.6875rem] font-extrabold text-stone-400 uppercase tracking-wider mb-1.5">Team</p>
+                    <p class="text-sm font-semibold text-stone-900">Morten L. (lead)</p>
+                    <p class="text-xs text-stone-500 mt-1">2 assistenter foreslået</p>
                   </div>
                   <div>
-                    <p class="text-[0.6875rem] font-semibold text-stone-400 uppercase tracking-wider mb-1.5">CRM Status</p>
-                    <p class="text-sm font-medium text-blue-600">Ready to sync</p>
-                    <p class="text-xs text-stone-500 mt-1">1-click activation</p>
+                    <p class="text-[0.6875rem] font-extrabold text-stone-400 uppercase tracking-wider mb-1.5">CRM</p>
+                    <p class="text-sm font-semibold text-blue-600">Klar til oprettelse</p>
+                    <p class="text-xs text-stone-500 mt-1">1 klik</p>
                   </div>
                 </div>
 
@@ -652,14 +767,12 @@
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
                     <div class="flex-1">
-                      <p class="text-sm font-semibold text-blue-900 mb-2">CRM Auto-Integration ved godkendelse:</p>
+                      <p class="text-sm font-extrabold text-blue-900 mb-2">Det her oprettes automatisk ved godkendelse:</p>
                       <ul class="text-xs text-blue-800 space-y-1.5">
-                        <li>✓ Lead oprettes i CRM med fuld case history + evidence trail</li>
-                        <li>✓ Andreas Møller tilføjes som primary contact (relationship score: 8/10)</li>
-                        <li>✓ Call task scheduleret til i dag kl. 15:00 (1 time buffer)</li>
-                        <li>✓ Pitch-deck vedhæftet (AI-generated, review-ready)</li>
-                        <li>✓ Follow-up sequence aktiveret (D+2, D+7, D+14 touchpoints)</li>
-                        <li>✓ Team notificeret via Slack + email</li>
+                        <li>✓ Mulighed i CRM med kort begrundelse + kildespor</li>
+                        <li>✓ Kontakt/person kobles på som nøglekontakt</li>
+                        <li>✓ Opgave: ring i dag (med forslag til agenda)</li>
+                        <li>✓ Opfølgning planlagt (D+2, D+7, D+14)</li>
                       </ul>
                     </div>
                   </div>
@@ -667,22 +780,22 @@
               </div>
 
               <div class="text-left xl:text-right flex-shrink-0">
-                <p class="text-[0.6875rem] font-semibold text-stone-400 uppercase tracking-wider mb-2">Estimeret deal-værdi</p>
-                <p class="value-primary text-[3.25rem] mb-3">4.7M</p>
+                <p class="text-[0.6875rem] font-extrabold text-stone-400 uppercase tracking-wider mb-2">Estimeret potentiale</p>
+                <p class="value-primary text-[3.25rem] mb-3">4,7M</p>
                 <div class="space-y-3">
                   <div class="inline-flex items-center space-x-2 bg-emerald-50 px-4 py-2.5 rounded-lg border border-emerald-100">
                     <div class="w-2 h-2 bg-emerald-600 rounded-full"></div>
-                    <p class="text-xs font-semibold text-emerald-800">Win prob: 73%</p>
+                    <p class="text-xs font-extrabold text-emerald-800">Sandsynlighed: 73%</p>
                   </div>
                   <p class="text-xs text-stone-500 leading-relaxed">
                     Baseret på:<br />
-                    • Similar cases (intern data)<br />
-                    • Relationship score: 8/10<br />
-                    • Sector expertise match
+                    • timing<br />
+                    • relation/indgang<br />
+                    • behovsmønster
                   </p>
 
                   <button class="btn btn-secondary w-full justify-center" onclick="openRagDrawer()">
-                    Vis forklaring (RAG)
+                    Se kilder og forklaring
                   </button>
                 </div>
               </div>
@@ -693,18 +806,18 @@
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
-                <span>Godkend & sync til CRM</span>
+                <span>Godkend & opret i CRM</span>
                 <span class="text-xs opacity-80">(1 klik)</span>
               </button>
 
-              <button class="btn btn-secondary" onclick="openCrmModal()">CRM preview først</button>
+              <button class="btn btn-secondary" onclick="openCrmModal()">Se hvad der oprettes</button>
 
               <button class="btn btn-secondary" onclick="enableMonitoringOnly()">
-                Ingen handling • Monitoring (0 min)
+                Overvågning (0 min)
               </button>
 
-              <button class="btn btn-ghost text-stone-400" onclick="toast('Afvist • systemet logger beslutning i CRM');">
-                Afvis opportunity
+              <button class="btn btn-ghost text-stone-400" onclick="toast('Afvist • logget, så du ikke spildes tid på den igen');">
+                Afvis
               </button>
             </div>
           </div>
@@ -716,144 +829,160 @@
                 <div class="flex items-center flex-wrap gap-2 mb-4">
                   <span class="badge badge-opportunity">
                     <div class="w-1.5 h-1.5 bg-teal-700 rounded-full"></div>
-                    C-Suite Movement
+                    Ny beslutningstager
                   </span>
                   <span class="text-xs text-stone-500">•</span>
-                  <span class="text-xs font-medium text-stone-600">Relationship window: 21 dage</span>
-                  <span class="source-tag">LinkedIn Premium</span>
-                  <span class="source-tag">Market Signals</span>
-                  <span class="source-tag">CRM notes</span>
+                  <span class="text-xs font-semibold text-stone-600">God timing: 21 dage</span>
+                  <span class="source-tag">LinkedIn</span>
+                  <span class="source-tag">Markedssignal</span>
+                  <span class="source-tag">Interne noter</span>
                   <span class="crm-badge">Auto-log</span>
                 </div>
 
-                <h3 class="serif text-[1.6rem] sm:text-[2rem] text-stone-900 mb-4 tracking-tight">GreenTech Nordic — Ny CFO (inbound opportunity)</h3>
+                <h3 class="serif text-[1.6rem] sm:text-[2rem] text-stone-900 mb-4 tracking-tight">GreenTech Nordic — ny CFO</h3>
 
-                <div class="prose prose-stone max-w-none mb-6">
-                  <p class="text-stone-700 leading-relaxed">
-                    <strong>RAG signal:</strong> Ny CFO + capex-aktivitet + ændring i procurement-pattern matcher “early legal spend” indikatorer.
-                    Systemet foreslår en <strong>lav-friktion intro</strong> (ingen pitch), hvor partneren kun skal vælge tone: “congrats + offer”.
-                  </p>
-
-                  <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mt-4">
-                    <p class="text-sm font-semibold text-stone-900 mb-2">Partner-safe næste skridt (valgfrit)</p>
-                    <ul class="text-sm text-stone-700 space-y-2 list-disc pl-5">
-                      <li><strong>Option A:</strong> 2-linjers intro-mail (auto-draft) — du godkender kun.</li>
-                      <li><strong>Option B:</strong> Monitoring i 21 dage (auto-log + alerts) — 0 min.</li>
-                      <li><strong>Option C:</strong> Delegér til associate (systemet vedlægger evidence trail).</li>
-                    </ul>
+                <div class="explain-box mb-6">
+                  <div class="explain-title">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01"></path>
+                    </svg>
+                    Hvad er anbefalingen her?
                   </div>
+                  <p class="explain-text">
+                    Ny CFO + ændret aktivitet kan være et tidligt tegn på, at der snart købes ekstern rådgivning.
+                    Forslaget er en <strong>lav-friktion intro</strong>, hvor du kun godkender et udkast – ingen pitch.
+                  </p>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 p-6 bg-stone-50 rounded-xl mb-6">
+                <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mt-2">
+                  <p class="text-sm font-extrabold text-stone-900 mb-2">Mulige næste skridt</p>
+                  <ul class="text-sm text-stone-700 space-y-2 list-disc pl-5">
+                    <li><strong>Option A:</strong> godkend et kort intro-udkast (2 min)</li>
+                    <li><strong>Option B:</strong> overvåg i 21 dage (0 min)</li>
+                    <li><strong>Option C:</strong> delegér til assistent (systemet vedlægger kildespor)</li>
+                  </ul>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 p-6 bg-stone-50 rounded-xl my-6">
                   <div>
-                    <p class="text-[0.6875rem] font-semibold text-stone-400 uppercase tracking-wider mb-1.5">RAG status</p>
-                    <p class="text-sm font-semibold text-emerald-700">GREEN</p>
-                    <p class="text-xs text-stone-500 mt-1">Coverage: 9/10</p>
+                    <p class="text-[0.6875rem] font-extrabold text-stone-400 uppercase tracking-wider mb-1.5">Datatroværdighed</p>
+                    <p class="text-sm font-extrabold text-emerald-700">GRØN</p>
+                    <p class="text-xs text-stone-500 mt-1">Dækning: 9/10</p>
                   </div>
                   <div>
-                    <p class="text-[0.6875rem] font-semibold text-stone-400 uppercase tracking-wider mb-1.5">Relationship</p>
-                    <p class="text-sm font-medium text-stone-900">Warm intro mulig</p>
-                    <p class="text-xs text-stone-500 mt-1">2 mutual stakeholders</p>
+                    <p class="text-[0.6875rem] font-extrabold text-stone-400 uppercase tracking-wider mb-1.5">Indgang</p>
+                    <p class="text-sm font-semibold text-stone-900">Varm intro mulig</p>
+                    <p class="text-xs text-stone-500 mt-1">2 fælles forbindelser</p>
                   </div>
                   <div>
-                    <p class="text-[0.6875rem] font-semibold text-stone-400 uppercase tracking-wider mb-1.5">Effort</p>
-                    <p class="text-sm font-semibold text-emerald-700">2 min</p>
-                    <p class="text-xs text-stone-500 mt-1">Approval-only</p>
+                    <p class="text-[0.6875rem] font-extrabold text-stone-400 uppercase tracking-wider mb-1.5">Tidsforbrug</p>
+                    <p class="text-sm font-extrabold text-emerald-700">2 min</p>
+                    <p class="text-xs text-stone-500 mt-1">Kun godkendelse</p>
                   </div>
                   <div>
-                    <p class="text-[0.6875rem] font-semibold text-stone-400 uppercase tracking-wider mb-1.5">CRM</p>
-                    <p class="text-sm font-medium text-blue-600">Auto-log ON</p>
-                    <p class="text-xs text-stone-500 mt-1">No manual entry</p>
+                    <p class="text-[0.6875rem] font-extrabold text-stone-400 uppercase tracking-wider mb-1.5">CRM</p>
+                    <p class="text-sm font-semibold text-blue-600">Auto-log TIL</p>
+                    <p class="text-xs text-stone-500 mt-1">Ingen manuel input</p>
                   </div>
                 </div>
 
                 <div class="flex items-center gap-3 flex-wrap">
                   <button class="btn btn-primary" onclick="openCrmModal()">
-                    Godkend intro & log i CRM
-                    <span class="text-xs opacity-80">(1 klik)</span>
+                    Godkend intro & log i CRM <span class="text-xs opacity-80">(1 klik)</span>
                   </button>
-                  <button class="btn btn-secondary" onclick="enableMonitoringOnly()">Monitoring (0 min)</button>
-                  <button class="btn btn-ghost" onclick="toast('Delegated • systemet oprettede tasks i CRM');">Delegér</button>
+                  <button class="btn btn-secondary" onclick="enableMonitoringOnly()">Overvågning (0 min)</button>
+                  <button class="btn btn-ghost" onclick="toast('Delegeret • opgaver oprettet automatisk');">Delegér</button>
                 </div>
               </div>
 
               <div class="text-left xl:text-right flex-shrink-0">
-                <p class="text-[0.6875rem] font-semibold text-stone-400 uppercase tracking-wider mb-2">Estimeret fee potentiale</p>
-                <p class="value-primary text-[3.25rem] mb-3">1.2M</p>
+                <p class="text-[0.6875rem] font-extrabold text-stone-400 uppercase tracking-wider mb-2">Estimeret potentiale</p>
+                <p class="value-primary text-[3.25rem] mb-3">1,2M</p>
                 <div class="space-y-3">
                   <div class="inline-flex items-center space-x-2 bg-emerald-50 px-4 py-2.5 rounded-lg border border-emerald-100">
                     <div class="w-2 h-2 bg-emerald-600 rounded-full"></div>
-                    <p class="text-xs font-semibold text-emerald-800">Win prob: 61%</p>
+                    <p class="text-xs font-extrabold text-emerald-800">Sandsynlighed: 61%</p>
                   </div>
                   <p class="text-xs text-stone-500 leading-relaxed">
-                    Model forklarer win-prob med weights:<br />
-                    • Timing 35%<br />
-                    • Relationship 40%<br />
-                    • Need 25%
+                    Vurderet ud fra:<br />
+                    • timing<br />
+                    • relation/indgang<br />
+                    • behovsmønster
                   </p>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Priority Action 3 -->
+          <!-- Priority Action 3 (Amber) -->
           <div class="card rounded-2xl p-6 sm:p-10 insight-card status-border status-high">
             <div class="flex flex-col xl:flex-row xl:items-start xl:justify-between gap-8 mb-6">
               <div class="flex-1 xl:pr-12">
                 <div class="flex items-center flex-wrap gap-2 mb-4">
                   <span class="badge badge-high">
                     <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
-                    RAG kræver 2 manglende kilder
+                    Mangler 2 vigtige ting
                   </span>
                   <span class="text-xs text-stone-500">•</span>
-                  <span class="text-xs font-medium text-stone-600">Auto-fix muligt (ingen partner effort)</span>
-                  <span class="source-tag">Doc Finder</span>
-                  <span class="source-tag">OCR/Parse</span>
-                  <span class="crm-badge">Monitoring</span>
+                  <span class="text-xs font-semibold text-stone-600">Systemet kan selv hente det (0 min)</span>
+                  <span class="source-tag">Dokument-finder</span>
+                  <span class="source-tag">Udtræk/parse</span>
+                  <span class="crm-badge">Overvågning</span>
                 </div>
 
-                <h3 class="serif text-[1.6rem] sm:text-[2rem] text-stone-900 mb-4 tracking-tight">Ambersignal — “Manglende dokumentation” (systemet lukker gap)</h3>
+                <h3 class="serif text-[1.6rem] sm:text-[2rem] text-stone-900 mb-4 tracking-tight">Gul status — ikke dårlig, bare ufuldstændig</h3>
 
-                <p class="text-stone-700 leading-relaxed">
-                  Her vises tydeligt hvorfor et lead er <strong>AMBER</strong>: ikke fordi kvaliteten er dårlig, men fordi to “essentials” mangler.
-                  Systemet kan selv indhente, parse og opdatere RAG — partneren kan blot vælge om de vil have en alert ved GREEN.
-                </p>
+                <div class="explain-box mb-6">
+                  <div class="explain-title">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M10.29 3.86l-7.09 12.27A2 2 0 004.93 19h14.14a2 2 0 001.73-2.87L13.71 3.86a2 2 0 00-3.42 0z"></path>
+                    </svg>
+                    Hvad betyder “gul”?
+                  </div>
+                  <p class="explain-text">
+                    Gul betyder: <strong>signalet er interessant</strong>, men systemet mangler to konkrete ting for at være tryg ved anbefalingen.
+                    Du kan starte auto-fix (0 min) eller få en besked, når den bliver grøn.
+                  </p>
+                </div>
 
-                <div class="mt-5 bg-stone-50 border border-stone-200 rounded-xl p-5">
+                <div class="mt-3 bg-stone-50 border border-stone-200 rounded-xl p-5">
                   <div class="flex items-start gap-4">
                     <div class="w-10 h-10 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center">
                       <svg class="w-5 h-5 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M10.29 3.86l-7.09 12.27A2 2 0 004.93 19h14.14a2 2 0 001.73-2.87L13.71 3.86a2 2 0 00-3.42 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01"></path>
                       </svg>
                     </div>
                     <div class="flex-1">
-                      <p class="text-sm font-semibold text-stone-900">Missing essentials</p>
+                      <p class="text-sm font-extrabold text-stone-900">Det systemet mangler</p>
                       <ul class="text-sm text-stone-700 mt-2 space-y-1.5 list-disc pl-5">
-                        <li>Seneste budget/forecast (for at bekræfte capex/hiring runway)</li>
-                        <li>Ejerstrategi / investor note (for at bekræfte divestment intent)</li>
+                        <li>Seneste budget/forecast (for at bekræfte aktivitet de næste måneder)</li>
+                        <li>Ejerstrategi / investor-note (for at bekræfte retning og intent)</li>
                       </ul>
-                      <p class="text-xs text-stone-500 mt-3">Når de er fundet, opgraderes RAG til GREEN og CRM-opportunity opdateres automatisk.</p>
+                      <p class="text-xs text-stone-500 mt-3">
+                        Når de er fundet, opdateres status automatisk, og CRM-noten opdateres uden manuel indsats.
+                      </p>
                     </div>
                   </div>
                 </div>
 
                 <div class="flex items-center gap-3 mt-6 flex-wrap">
-                  <button class="btn btn-secondary" onclick="toast('Auto-fix startet • systemet søger missing docs');">Start auto-fix (0 min)</button>
-                  <button class="btn btn-primary" onclick="toast('Alert sat • du får ping når RAG er GREEN');">Alert når GREEN</button>
-                  <button class="btn btn-ghost" onclick="openRagDrawer()">Se source trail</button>
+                  <button class="btn btn-secondary" onclick="toast('Auto-fix startet • systemet søger de manglende ting');">Start auto-fix (0 min)</button>
+                  <button class="btn btn-primary" onclick="toast('Besked aktiveret • du får ping når status er GRØN');">Giv besked når GRØN</button>
+                  <button class="btn btn-ghost" onclick="openRagDrawer()">Se kilder</button>
                 </div>
               </div>
 
               <div class="text-left xl:text-right flex-shrink-0">
-                <p class="text-[0.6875rem] font-semibold text-stone-400 uppercase tracking-wider mb-2">RAG Confidence</p>
+                <p class="text-[0.6875rem] font-extrabold text-stone-400 uppercase tracking-wider mb-2">Tillidsscore</p>
                 <p class="value-secondary text-amber-700 mb-2">88%</p>
                 <div class="progress-bar">
                   <div class="progress-fill" style="width: 88%"></div>
                 </div>
-                <p class="text-xs text-stone-500 mt-3">Forventet GREEN: 24–72 timer</p>
+                <p class="text-xs text-stone-500 mt-3">Forventet grøn: 24–72 timer</p>
               </div>
             </div>
           </div>
+
         </div>
       </section>
 
@@ -862,15 +991,15 @@
       <footer class="pb-10">
         <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
           <div>
-            <h3 class="serif text-2xl text-stone-900">Final solution (interview-ready)</h3>
+            <h3 class="serif text-2xl text-stone-900">Opsummering</h3>
             <p class="text-stone-600 mt-2 max-w-3xl leading-relaxed">
-              Fokus: <strong>Lead generation</strong> + <strong>RAG status</strong> + <strong>CRM integration</strong> — med partner-safe UX.
-              Partneren føler aldrig pres: de kan altid vælge <strong>Monitoring (0 min)</strong>, mens systemet fortsætter med at indsamle evidens og logge i CRM.
+              Fokus: <strong>muligheder</strong> + <strong>forklaring (datatroværdighed)</strong> + <strong>automatisk CRM-log</strong>.
+              Partneren er aldrig “tvunget” til at gøre noget: vælg altid <strong>Overvågning (0 min)</strong> og lad systemet fortsætte.
             </p>
           </div>
           <div class="text-left lg:text-right">
             <p class="text-xs text-stone-500">Build: demo UI</p>
-            <p class="text-sm font-semibold text-stone-900">Auto-log • Audit • Idempotent sync</p>
+            <p class="text-sm font-extrabold text-stone-900">Sporbarhed • Auto-log • Ingen manuel indtastning</p>
           </div>
         </div>
       </footer>
@@ -882,7 +1011,19 @@
     <!-- ====================== PAGE: COMMERCIAL EXCELLENCE ====================== -->
     <div id="pageKunde" class="hidden">
 
-      <!-- Top banner -->
+      <div class="explain-box mb-6 animate-in">
+        <div class="explain-title">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h12M4 18h16"></path>
+          </svg>
+          Kundeudvikling – hvad er det?
+        </div>
+        <p class="explain-text">
+          Denne side viser, hvordan man kan styre kommercielle initiativer på ledelsesniveau: fokusklienter, pipeline-disciplin,
+          governance og opfølgning på effekt – alt koblet til CRM, så det bliver målbart.
+        </p>
+      </div>
+
       <div class="value-highlight rounded-2xl p-6 sm:p-8 mb-8 sm:mb-10 animate-in">
         <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
           <div class="flex-1">
@@ -890,7 +1031,7 @@
               <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
               </svg>
-              <h3 class="text-lg font-semibold text-emerald-900">Commercial Excellence Operating System</h3>
+              <h3 class="text-lg font-extrabold text-emerald-900">Kommerciel motor (ledelsesniveau)</h3>
               <span class="pill-safe">
                 <svg class="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"></path>
@@ -899,43 +1040,43 @@
               </span>
             </div>
             <p class="text-stone-700 leading-relaxed max-w-4xl">
-              Denne side viser, hvordan vi driver tværgående kommercielle initiativer: <strong>porteføljestyring</strong>,
-              <strong>pipeline/account performance</strong>, <strong>governance</strong> og <strong>benefits realization</strong> — alt koblet til CRM og målbart på ledelsesniveau.
+              Her kan man styre tværgående kommercielle initiativer: <strong>fokusklienter</strong>,
+              <strong>pipeline-disciplin</strong>, <strong>governance</strong> og <strong>effektopfølgning</strong> —
+              koblet til CRM, så man kan se hvad der faktisk virker.
             </p>
           </div>
           <div class="text-left lg:text-right flex-shrink-0">
-            <p class="text-sm font-semibold text-emerald-700 mb-1">Måleligt uplift (QTD)</p>
+            <p class="text-sm font-extrabold text-emerald-700 mb-1">Målt forbedring (kvartal)</p>
             <p class="text-5xl font-light text-emerald-600">+18%</p>
-            <p class="text-xs text-stone-600 mt-2">pipeline velocity • win-rate • focus clients</p>
+            <p class="text-xs text-stone-600 mt-2">hastighed • succesrate • fokusklienter</p>
           </div>
         </div>
       </div>
 
-      <!-- Executive Scoreboard (responsive) -->
       <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-6 mb-10 sm:mb-14 animate-in delay-100">
         <div class="card rounded-xl p-7 status-border status-opportunity">
-          <p class="text-[0.6875rem] font-semibold text-stone-500 uppercase tracking-wider mb-3">Focus clients coverage</p>
+          <p class="text-[0.6875rem] font-extrabold text-stone-500 uppercase tracking-wider mb-3">Fokusklient-dækning</p>
           <p class="value-secondary text-emerald-700 mb-2">82%</p>
-          <p class="text-xs text-stone-600 leading-relaxed">Stakeholder map + next actions</p>
+          <p class="text-xs text-stone-600 leading-relaxed">Stakeholder-map + næste skridt</p>
         </div>
 
         <div class="card rounded-xl p-7">
-          <p class="text-[0.6875rem] font-semibold text-stone-500 uppercase tracking-wider mb-3">Pipeline conversion</p>
+          <p class="text-[0.6875rem] font-extrabold text-stone-500 uppercase tracking-wider mb-3">Pipeline-konvertering</p>
           <p class="value-secondary mb-2">+9%</p>
-          <p class="text-xs text-stone-600 leading-relaxed">Stage hygiene + playbooks</p>
+          <p class="text-xs text-stone-600 leading-relaxed">Stage-disciplin + playbooks</p>
         </div>
 
         <div class="card rounded-xl p-7 bg-gradient-to-br from-blue-50 to-white">
-          <p class="text-[0.6875rem] font-semibold text-blue-700 uppercase tracking-wider mb-3">CRM adoption</p>
+          <p class="text-[0.6875rem] font-extrabold text-blue-700 uppercase tracking-wider mb-3">CRM-adoption</p>
           <p class="value-secondary text-blue-700 mb-2">94%</p>
-          <p class="text-xs text-stone-600 leading-relaxed">Auto-log • no manual entry</p>
+          <p class="text-xs text-stone-600 leading-relaxed">Auto-log • ingen manuel input</p>
         </div>
 
         <div class="card rounded-xl p-7">
-          <p class="text-[0.6875rem] font-semibold text-stone-500 uppercase tracking-wider mb-3">Win-rate</p>
+          <p class="text-[0.6875rem] font-extrabold text-stone-500 uppercase tracking-wider mb-3">Succesrate</p>
           <div class="flex items-baseline space-x-3 mb-3">
             <p class="value-secondary">41%</p>
-            <span class="text-lg font-semibold text-emerald-600">+6pp</span>
+            <span class="text-lg font-extrabold text-emerald-600">+6pp</span>
           </div>
           <div class="progress-bar">
             <div class="progress-fill" style="width: 41%"></div>
@@ -943,24 +1084,23 @@
         </div>
 
         <div class="card rounded-xl p-7">
-          <p class="text-[0.6875rem] font-semibold text-stone-500 uppercase tracking-wider mb-3">Benefits realized</p>
-          <p class="value-secondary text-stone-900 mb-2">7.6M</p>
-          <p class="text-xs text-stone-600 leading-relaxed">tracked impact • board-ready</p>
+          <p class="text-[0.6875rem] font-extrabold text-stone-500 uppercase tracking-wider mb-3">Målt effekt</p>
+          <p class="value-secondary text-stone-900 mb-2">7,6M</p>
+          <p class="text-xs text-stone-600 leading-relaxed">opgjort • bestyrelsesklart</p>
         </div>
       </div>
 
-      <!-- Portfolio + Governance (responsive col-span) -->
       <div class="grid grid-cols-12 gap-6 mb-10 sm:mb-14 animate-in delay-200">
         <div class="col-span-12 xl:col-span-7 card rounded-2xl p-6 sm:p-8">
           <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
             <div>
-              <p class="text-xs font-semibold text-stone-500 uppercase tracking-wider">Porteføljestyring</p>
-              <h3 class="serif text-2xl text-stone-900 mt-2">Commercial Initiatives Portfolio</h3>
-              <p class="text-sm text-stone-600 mt-2">Prioritering, owners, dependencies og beslutningspunkter — tværorganisatorisk.</p>
+              <p class="text-xs font-extrabold text-stone-500 uppercase tracking-wider">Portefølje</p>
+              <h3 class="serif text-2xl text-stone-900 mt-2">Kommercielle initiativer</h3>
+              <p class="text-sm text-stone-600 mt-2">Prioritering, ejerskab, afhængigheder og beslutninger – samlet ét sted.</p>
             </div>
             <div class="flex items-center gap-2 flex-wrap">
-              <button class="btn btn-secondary" onclick="toast('Board pack: Portfolio slide (mock)');">Export PPT</button>
-              <button class="btn btn-ghost" onclick="toast('Filter åbnet (mock)');">Filter</button>
+              <button class="btn btn-secondary" onclick="toast('Bestyrelsespakke: eksport (demo)');">Eksportér</button>
+              <button class="btn btn-ghost" onclick="toast('Filter åbnet (demo)');">Filtrér</button>
             </div>
           </div>
 
@@ -969,35 +1109,35 @@
               <div class="flex items-center justify-between gap-4">
                 <div class="min-w-0">
                   <div class="flex items-center gap-2 flex-wrap">
-                    <span class="badge badge-opportunity"><div class="w-1.5 h-1.5 bg-teal-700 rounded-full"></div>In progress</span>
-                    <span class="source-tag">Strategic theme: Focus clients</span>
-                    <span class="crm-badge">Owner: COO/BD</span>
+                    <span class="badge badge-opportunity"><div class="w-1.5 h-1.5 bg-teal-700 rounded-full"></div>I gang</span>
+                    <span class="source-tag">Tema: Fokusklienter</span>
+                    <span class="crm-badge">Ejer: COO/BD</span>
                   </div>
-                  <p class="text-lg font-semibold text-stone-900 mt-2">Focus Client Program 2.0</p>
-                  <p class="text-sm text-stone-600 mt-1">Stakeholder coverage, whitespace, cadence + playbooks i CRM.</p>
+                  <p class="text-lg font-extrabold text-stone-900 mt-2">Fokusklient-program 2.0</p>
+                  <p class="text-sm text-stone-600 mt-1">Dækning, whitespace og kadence – styret via CRM.</p>
                 </div>
                 <div class="text-right">
-                  <p class="text-xs text-stone-500">Impact</p>
-                  <p class="text-lg font-semibold text-emerald-700">High</p>
-                  <p class="text-xs text-stone-500 mt-1">Effort: Med</p>
+                  <p class="text-xs text-stone-500">Effekt</p>
+                  <p class="text-lg font-extrabold text-emerald-700">Høj</p>
+                  <p class="text-xs text-stone-500 mt-1">Indsats: Mellem</p>
                 </div>
               </div>
               <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3 text-xs">
                 <div class="bg-stone-50 border border-stone-200 rounded-lg p-3">
-                  <p class="font-semibold text-stone-700">Next decision</p>
-                  <p class="text-stone-600 mt-1">Approve cadence + owners</p>
+                  <p class="font-extrabold text-stone-700">Næste beslutning</p>
+                  <p class="text-stone-600 mt-1">Godkend kadence + ejere</p>
                 </div>
                 <div class="bg-stone-50 border border-stone-200 rounded-lg p-3">
-                  <p class="font-semibold text-stone-700">Due</p>
+                  <p class="font-extrabold text-stone-700">Deadline</p>
                   <p class="text-stone-600 mt-1">Feb 2026</p>
                 </div>
                 <div class="bg-stone-50 border border-stone-200 rounded-lg p-3">
-                  <p class="font-semibold text-stone-700">Dependency</p>
-                  <p class="text-stone-600 mt-1">CRM fields live</p>
+                  <p class="font-extrabold text-stone-700">Afhænger af</p>
+                  <p class="text-stone-600 mt-1">CRM-felter live</p>
                 </div>
                 <div class="bg-stone-50 border border-stone-200 rounded-lg p-3">
-                  <p class="font-semibold text-stone-700">KPI</p>
-                  <p class="text-stone-600 mt-1">Coverage +10pp</p>
+                  <p class="font-extrabold text-stone-700">Mål</p>
+                  <p class="text-stone-600 mt-1">Dækning +10pp</p>
                 </div>
               </div>
             </div>
@@ -1006,35 +1146,35 @@
               <div class="flex items-center justify-between gap-4">
                 <div class="min-w-0">
                   <div class="flex items-center gap-2 flex-wrap">
-                    <span class="badge badge-high"><div class="w-1.5 h-1.5 bg-white rounded-full"></div>At risk</span>
-                    <span class="source-tag">Strategic theme: Pipeline</span>
-                    <span class="crm-badge">Owner: Practice leads</span>
+                    <span class="badge badge-high"><div class="w-1.5 h-1.5 bg-white rounded-full"></div>Risiko</span>
+                    <span class="source-tag">Tema: Pipeline</span>
+                    <span class="crm-badge">Ejer: Praksisledere</span>
                   </div>
-                  <p class="text-lg font-semibold text-stone-900 mt-2">Pipeline Stage Hygiene</p>
-                  <p class="text-sm text-stone-600 mt-1">Standardiser stage definitions + nudges + auto-clean rules.</p>
+                  <p class="text-lg font-extrabold text-stone-900 mt-2">Stage-disciplin</p>
+                  <p class="text-sm text-stone-600 mt-1">Standard for stages + små nudges + auto-oprydning.</p>
                 </div>
                 <div class="text-right">
-                  <p class="text-xs text-stone-500">Impact</p>
-                  <p class="text-lg font-semibold text-amber-700">Med</p>
-                  <p class="text-xs text-stone-500 mt-1">Effort: Low</p>
+                  <p class="text-xs text-stone-500">Effekt</p>
+                  <p class="text-lg font-extrabold text-amber-700">Mellem</p>
+                  <p class="text-xs text-stone-500 mt-1">Indsats: Lav</p>
                 </div>
               </div>
               <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3 text-xs">
                 <div class="bg-stone-50 border border-stone-200 rounded-lg p-3">
-                  <p class="font-semibold text-stone-700">Blocker</p>
-                  <p class="text-stone-600 mt-1">Owner alignment</p>
+                  <p class="font-extrabold text-stone-700">Blokering</p>
+                  <p class="text-stone-600 mt-1">Owner-alignment</p>
                 </div>
                 <div class="bg-stone-50 border border-stone-200 rounded-lg p-3">
-                  <p class="font-semibold text-stone-700">Due</p>
+                  <p class="font-extrabold text-stone-700">Deadline</p>
                   <p class="text-stone-600 mt-1">Jan 2026</p>
                 </div>
                 <div class="bg-stone-50 border border-stone-200 rounded-lg p-3">
-                  <p class="font-semibold text-stone-700">KPI</p>
-                  <p class="text-stone-600 mt-1">Aging -15%</p>
+                  <p class="font-extrabold text-stone-700">Mål</p>
+                  <p class="text-stone-600 mt-1">Alder -15%</p>
                 </div>
                 <div class="bg-stone-50 border border-stone-200 rounded-lg p-3">
-                  <p class="font-semibold text-stone-700">Decision</p>
-                  <p class="text-stone-600 mt-1">Approve playbook</p>
+                  <p class="font-extrabold text-stone-700">Beslutning</p>
+                  <p class="text-stone-600 mt-1">Godkend playbook</p>
                 </div>
               </div>
             </div>
@@ -1043,35 +1183,35 @@
               <div class="flex items-center justify-between gap-4">
                 <div class="min-w-0">
                   <div class="flex items-center gap-2 flex-wrap">
-                    <span class="badge badge-automated"><div class="w-1.5 h-1.5 bg-emerald-700 rounded-full"></div>Completed</span>
-                    <span class="source-tag">Strategic theme: Account mgmt</span>
-                    <span class="crm-badge">Owner: BD</span>
+                    <span class="badge badge-automated"><div class="w-1.5 h-1.5 bg-emerald-700 rounded-full"></div>Afsluttet</span>
+                    <span class="source-tag">Tema: Kundeplan</span>
+                    <span class="crm-badge">Ejer: BD</span>
                   </div>
-                  <p class="text-lg font-semibold text-stone-900 mt-2">Account Plans in CRM</p>
-                  <p class="text-sm text-stone-600 mt-1">Account plan template + quarterly review pack.</p>
+                  <p class="text-lg font-extrabold text-stone-900 mt-2">Kundeplaner i CRM</p>
+                  <p class="text-sm text-stone-600 mt-1">Skabelon + kvartalsreview – med opfølgning på effect.</p>
                 </div>
                 <div class="text-right">
-                  <p class="text-xs text-stone-500">Impact</p>
-                  <p class="text-lg font-semibold text-emerald-700">High</p>
-                  <p class="text-xs text-stone-500 mt-1">Effort: Med</p>
+                  <p class="text-xs text-stone-500">Effekt</p>
+                  <p class="text-lg font-extrabold text-emerald-700">Høj</p>
+                  <p class="text-xs text-stone-500 mt-1">Indsats: Mellem</p>
                 </div>
               </div>
               <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3 text-xs">
                 <div class="bg-stone-50 border border-stone-200 rounded-lg p-3">
-                  <p class="font-semibold text-stone-700">Benefit</p>
-                  <p class="text-stone-600 mt-1">Meetings +22%</p>
+                  <p class="font-extrabold text-stone-700">Gevinst</p>
+                  <p class="text-stone-600 mt-1">Møder +22%</p>
                 </div>
                 <div class="bg-stone-50 border border-stone-200 rounded-lg p-3">
-                  <p class="font-semibold text-stone-700">Adoption</p>
+                  <p class="font-extrabold text-stone-700">Adoption</p>
                   <p class="text-stone-600 mt-1">94%</p>
                 </div>
                 <div class="bg-stone-50 border border-stone-200 rounded-lg p-3">
-                  <p class="font-semibold text-stone-700">KPI</p>
-                  <p class="text-stone-600 mt-1">Coverage +8pp</p>
+                  <p class="font-extrabold text-stone-700">Mål</p>
+                  <p class="text-stone-600 mt-1">Dækning +8pp</p>
                 </div>
                 <div class="bg-stone-50 border border-stone-200 rounded-lg p-3">
-                  <p class="font-semibold text-stone-700">Status</p>
-                  <p class="text-stone-600 mt-1">Tracked</p>
+                  <p class="font-extrabold text-stone-700">Status</p>
+                  <p class="text-stone-600 mt-1">Måles</p>
                 </div>
               </div>
             </div>
@@ -1080,55 +1220,54 @@
 
         <div class="col-span-12 xl:col-span-5 space-y-6">
           <div class="card rounded-2xl p-6 sm:p-8">
-            <p class="text-xs font-semibold text-stone-500 uppercase tracking-wider">Governance</p>
-            <h3 class="serif text-2xl text-stone-900 mt-2">Cadence & Decisioning</h3>
-            <p class="text-sm text-stone-600 mt-2">Fast rytme og klart ejerskab skaber fremdrift i en partnerorganisation.</p>
+            <p class="text-xs font-extrabold text-stone-500 uppercase tracking-wider">Governance</p>
+            <h3 class="serif text-2xl text-stone-900 mt-2">Rytme og beslutninger</h3>
+            <p class="text-sm text-stone-600 mt-2">En enkel kadence gør det let at drive fremdrift – uden ekstra bureaukrati.</p>
 
             <div class="mt-5 space-y-3 text-sm">
               <div class="bg-stone-50 border border-stone-200 rounded-xl p-4">
-                <p class="font-semibold text-stone-900">Weekly: Pipeline Review</p>
-                <p class="text-stone-600 mt-1">Stage hygiene • next best actions • blockers</p>
+                <p class="font-extrabold text-stone-900">Ugentligt: Pipeline-review</p>
+                <p class="text-stone-600 mt-1">disciplin • næste skridt • blokeringer</p>
               </div>
               <div class="bg-stone-50 border border-stone-200 rounded-xl p-4">
-                <p class="font-semibold text-stone-900">Monthly: Focus Client Review</p>
-                <p class="text-stone-600 mt-1">Coverage map • whitespace • account plan progress</p>
+                <p class="font-extrabold text-stone-900">Månedligt: Fokusklient-review</p>
+                <p class="text-stone-600 mt-1">dækning • whitespace • fremdrift</p>
               </div>
               <div class="bg-stone-50 border border-stone-200 rounded-xl p-4">
-                <p class="font-semibold text-stone-900">Quarterly: Strategy Check</p>
-                <p class="text-stone-600 mt-1">Portfolio re-prioritization • benefits realization</p>
+                <p class="font-extrabold text-stone-900">Kvartalsvist: Strategi-check</p>
+                <p class="text-stone-600 mt-1">prioritering • effekt • justering</p>
               </div>
             </div>
 
             <div class="mt-6 flex items-center gap-3 flex-wrap">
-              <button class="btn btn-primary" onclick="toast('Board pack: Governance slide (mock)');">Export board pack</button>
-              <button class="btn btn-secondary" onclick="toast('Change plan åbnet (mock)');">Change plan</button>
+              <button class="btn btn-primary" onclick="toast('Board pack: export (demo)');">Eksportér bestyrelsespakke</button>
+              <button class="btn btn-secondary" onclick="toast('Change plan åbnet (demo)');">Change plan</button>
             </div>
           </div>
 
           <div class="card rounded-2xl p-6 sm:p-8">
-            <p class="text-xs font-semibold text-stone-500 uppercase tracking-wider">Change</p>
-            <h3 class="serif text-2xl text-stone-900 mt-2">Enablement & Adoption</h3>
+            <p class="text-xs font-extrabold text-stone-500 uppercase tracking-wider">Implementering</p>
+            <h3 class="serif text-2xl text-stone-900 mt-2">Adoption uden friktion</h3>
             <ul class="mt-4 text-sm text-stone-700 space-y-2 list-disc pl-5">
-              <li><strong>Playbooks</strong> pr. praksisområde (templates + talk tracks)</li>
-              <li><strong>Nudges</strong> (partner-safe): monitoring, reminders, 1-click logging</li>
-              <li><strong>Training</strong>: 3 korte sessions + “office hours”</li>
-              <li><strong>Measurement</strong>: adoption + outcomes + datakvalitet</li>
+              <li><strong>Skabeloner</strong> pr. praksis (mail, mødeagenda, næste skridt)</li>
+              <li><strong>Nudges</strong> (partner-venligt): forslag og 1-klik log</li>
+              <li><strong>Træning</strong>: 3 korte sessions + “office hours”</li>
+              <li><strong>Måling</strong>: adoption + resultater + datakvalitet</li>
             </ul>
           </div>
         </div>
       </div>
 
-      <!-- Focus Clients Table -->
       <div class="card rounded-2xl p-6 sm:p-8 mb-10 sm:mb-14 animate-in delay-300">
         <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
           <div>
-            <p class="text-xs font-semibold text-stone-500 uppercase tracking-wider">Focus clients</p>
-            <h3 class="serif text-2xl text-stone-900 mt-2">Account Management Cockpit</h3>
-            <p class="text-sm text-stone-600 mt-2">Stakeholder coverage, whitespace og partner-safe next actions — alt auto-logget i CRM.</p>
+            <p class="text-xs font-extrabold text-stone-500 uppercase tracking-wider">Fokusklienter</p>
+            <h3 class="serif text-2xl text-stone-900 mt-2">Kunde-cockpit</h3>
+            <p class="text-sm text-stone-600 mt-2">Dækning, whitespace og næste skridt – auto-logget i CRM.</p>
           </div>
           <div class="flex items-center gap-2 flex-wrap">
-            <button class="btn btn-secondary" onclick="toast('Board pack: Focus Clients slide (mock)');">Export PPT</button>
-            <button class="btn btn-primary" onclick="toast('CRM sync: Focus Clients updates (mock)');">Sync to CRM</button>
+            <button class="btn btn-secondary" onclick="toast('Eksport: slide (demo)');">Eksportér</button>
+            <button class="btn btn-primary" onclick="toast('CRM-synk: opdateringer (demo)');">Synk til CRM</button>
           </div>
         </div>
 
@@ -1137,47 +1276,47 @@
             <thead class="text-xs uppercase tracking-wider text-stone-500">
               <tr class="border-b border-stone-200">
                 <th class="py-3 pr-4">Klient</th>
-                <th class="py-3 pr-4">Coverage</th>
+                <th class="py-3 pr-4">Dækning</th>
                 <th class="py-3 pr-4">Whitespace</th>
                 <th class="py-3 pr-4">Pipeline</th>
-                <th class="py-3 pr-4">RAG</th>
-                <th class="py-3 pr-4">Next action</th>
+                <th class="py-3 pr-4">Data</th>
+                <th class="py-3 pr-4">Næste skridt</th>
               </tr>
             </thead>
             <tbody class="text-stone-800">
               <tr class="border-b border-stone-100 hover:bg-stone-50 transition">
-                <td class="py-4 pr-4 font-semibold">Client A / Industrials</td>
-                <td class="py-4 pr-4"><span class="badge badge-opportunity"><div class="w-1.5 h-1.5 bg-teal-700 rounded-full"></div>GREEN</span></td>
+                <td class="py-4 pr-4 font-extrabold">Client A / Industrials</td>
+                <td class="py-4 pr-4"><span class="badge badge-opportunity"><div class="w-1.5 h-1.5 bg-teal-700 rounded-full"></div>GRØN</span></td>
                 <td class="py-4 pr-4">M&A • Compliance</td>
-                <td class="py-4 pr-4">12.4M</td>
-                <td class="py-4 pr-4"><span class="source-tag">Fresh: 2d</span></td>
+                <td class="py-4 pr-4">12,4M</td>
+                <td class="py-4 pr-4"><span class="source-tag">Opdateret: 2d</span></td>
                 <td class="py-4 pr-4">
-                  <button class="btn btn-secondary !px-4 !py-2 !text-xs" onclick="toast('Task oprettet i CRM (mock)');">Intro mail (1-click)</button>
-                  <button class="btn btn-ghost !px-3 !py-2 !text-xs" onclick="toast('Monitoring ON (mock)');">Monitoring</button>
+                  <button class="btn btn-secondary !px-4 !py-2 !text-xs" onclick="toast('Opgave oprettet i CRM (demo)');">Intro-mail (1 klik)</button>
+                  <button class="btn btn-ghost !px-3 !py-2 !text-xs" onclick="toast('Overvågning TIL (demo)');">Overvåg</button>
                 </td>
               </tr>
 
               <tr class="border-b border-stone-100 hover:bg-stone-50 transition">
-                <td class="py-4 pr-4 font-semibold">Client B / Tech</td>
-                <td class="py-4 pr-4"><span class="badge badge-high"><div class="w-1.5 h-1.5 bg-white rounded-full"></div>AMBER</span></td>
+                <td class="py-4 pr-4 font-extrabold">Client B / Tech</td>
+                <td class="py-4 pr-4"><span class="badge badge-high"><div class="w-1.5 h-1.5 bg-white rounded-full"></div>GUL</span></td>
                 <td class="py-4 pr-4">IP • Data</td>
-                <td class="py-4 pr-4">6.8M</td>
-                <td class="py-4 pr-4"><span class="source-tag">Missing: 1 doc</span></td>
+                <td class="py-4 pr-4">6,8M</td>
+                <td class="py-4 pr-4"><span class="source-tag">Mangler: 1 ting</span></td>
                 <td class="py-4 pr-4">
-                  <button class="btn btn-secondary !px-4 !py-2 !text-xs" onclick="toast('Auto-fix startet (mock)');">Auto-fix gap</button>
-                  <button class="btn btn-ghost !px-3 !py-2 !text-xs" onclick="toast('Alert sat ved GREEN (mock)');">Alert</button>
+                  <button class="btn btn-secondary !px-4 !py-2 !text-xs" onclick="toast('Auto-fix startet (demo)');">Auto-fix</button>
+                  <button class="btn btn-ghost !px-3 !py-2 !text-xs" onclick="toast('Besked ved GRØN (demo)');">Besked</button>
                 </td>
               </tr>
 
               <tr class="hover:bg-stone-50 transition">
-                <td class="py-4 pr-4 font-semibold">Client C / Finance</td>
-                <td class="py-4 pr-4"><span class="badge badge-opportunity"><div class="w-1.5 h-1.5 bg-teal-700 rounded-full"></div>GREEN</span></td>
-                <td class="py-4 pr-4">Employment • Disputes</td>
-                <td class="py-4 pr-4">9.1M</td>
-                <td class="py-4 pr-4"><span class="source-tag">Fresh: 1d</span></td>
+                <td class="py-4 pr-4 font-extrabold">Client C / Finance</td>
+                <td class="py-4 pr-4"><span class="badge badge-opportunity"><div class="w-1.5 h-1.5 bg-teal-700 rounded-full"></div>GRØN</span></td>
+                <td class="py-4 pr-4">Ansættelse • Tvister</td>
+                <td class="py-4 pr-4">9,1M</td>
+                <td class="py-4 pr-4"><span class="source-tag">Opdateret: 1d</span></td>
                 <td class="py-4 pr-4">
-                  <button class="btn btn-secondary !px-4 !py-2 !text-xs" onclick="toast('Quarterly review booket (mock)');">Book Q review</button>
-                  <button class="btn btn-ghost !px-3 !py-2 !text-xs" onclick="toast('Delegated (mock)');">Delegér</button>
+                  <button class="btn btn-secondary !px-4 !py-2 !text-xs" onclick="toast('Review booket (demo)');">Book review</button>
+                  <button class="btn btn-ghost !px-3 !py-2 !text-xs" onclick="toast('Delegeret (demo)');">Delegér</button>
                 </td>
               </tr>
             </tbody>
@@ -1188,13 +1327,12 @@
       <div class="pb-10">
         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
-            <h3 class="serif text-2xl text-stone-900">Commercial Excellence = strategi der bliver til resultater</h3>
+            <h3 class="serif text-2xl text-stone-900">Kundeudvikling = strategi der bliver til handling</h3>
             <p class="text-stone-600 mt-2 max-w-3xl leading-relaxed">
-              Portefølje, governance og effektopfølgning gør det muligt at eksekvere på tværs — uden at lægge pres på partnerne.
-              Det er “operating systemet” bag lead generation og account growth.
+              Portefølje, governance og effektopfølgning gør det muligt at eksekvere på tværs – uden at lægge pres på partnerne.
             </p>
           </div>
-          <button class="btn btn-secondary" onclick="showPage('opportunity')">Tilbage til Opportunity Center</button>
+          <button class="btn btn-secondary" onclick="showPage('mulighed')">Tilbage til Mulighedsoverblik</button>
         </div>
       </div>
 
@@ -1202,242 +1340,248 @@
     <!-- ====================== END PAGE: COMMERCIAL EXCELLENCE ====================== -->
 
   </main>
-<!-- ====================== SIDE: PARTNEROVERBLIK ====================== -->
-<div id="pagePartner" class="hidden">
-  <div class="value-highlight rounded-2xl p-6 sm:p-8 mb-8 sm:mb-10 animate-in">
-    <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
-      <div class="flex-1">
-        <div class="flex items-start sm:items-center flex-wrap gap-3 mb-3">
-          <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 10-8 0 4 4 0 008 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-          </svg>
-          <h3 class="text-lg font-semibold text-emerald-900">Partneroverblik</h3>
-          <span class="pill-safe">
-            Partner-venligt: ingen pres
-          </span>
-        </div>
-        <p class="text-stone-700 leading-relaxed max-w-4xl">
-          Overblik pr. partner: muligheder, næste skridt og hvad systemet allerede har gjort automatisk.
-        </p>
+
+  <!-- ====================== SIDE: PARTNEROVERBLIK ====================== -->
+  <div id="pagePartner" class="hidden max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-16 pb-14">
+    <div class="explain-box mb-6 animate-in">
+      <div class="explain-title">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 10-8 0 4 4 0 008 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+        </svg>
+        Partneroverblik – hvad er formålet?
       </div>
+      <p class="explain-text">
+        Denne side gør det nemt at se “hvad er relevant for mig?”:
+        hvilke muligheder der er, hvad næste skridt er, og hvad systemet allerede har gjort.
+      </p>
+    </div>
+
+    <div class="card rounded-2xl p-6 sm:p-8">
+      <p class="text-sm text-stone-700">
+        (Pladsholder) Her kan du senere lave en rigtig side med partner-kort, filtre og “mine beslutninger”.
+      </p>
+    </div>
+
+    <div class="pb-10 mt-10">
+      <button class="btn btn-secondary" onclick="showPage('mulighed')">Tilbage til Mulighedsoverblik</button>
     </div>
   </div>
-
-  <div class="card rounded-2xl p-6 sm:p-8">
-    <p class="text-sm text-stone-700">
-      (Her kan du senere flytte/tilpasse din partner-boks, så den bliver en rigtig side.)
-    </p>
-  </div>
-
-  <div class="pb-10 mt-10">
-    <button class="btn btn-secondary" onclick="showPage('mulighed')">Tilbage til Mulighedsoverblik</button>
-  </div>
-</div>
-<!-- ====================== SLUT SIDE: PARTNEROVERBLIK ====================== -->
+  <!-- ====================== SLUT SIDE: PARTNEROVERBLIK ====================== -->
 
   <!-- ====================== SIDE: DATAINDSAMLING ====================== -->
-<div id="pageData" class="hidden">
+  <div id="pageData" class="hidden max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-16 pb-14">
 
-  <!-- Top banner -->
-  <div class="value-highlight rounded-2xl p-6 sm:p-8 mb-8 sm:mb-10 animate-in">
-    <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
-      <div class="flex-1">
-        <div class="flex items-start sm:items-center flex-wrap gap-3 mb-3">
-          <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h16M4 12h12M4 17h16"></path>
-          </svg>
-          <h3 class="text-lg font-semibold text-emerald-900">Dataindsamling uden partnerarbejde</h3>
-          <span class="pill-safe">
-            Vi bruger signaler — ikke indhold
-          </span>
+    <div class="explain-box mb-6 animate-in">
+      <div class="explain-title">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h16M4 12h12M4 17h16"></path>
+        </svg>
+        Dataindsamling – forklaret helt enkelt
+      </div>
+      <p class="explain-text">
+        Vi kan skabe værdi uden at “læse alt” og uden at bede partnerne om input.
+        Systemet kan bygge på <strong>signaler og metadata</strong> (ændringer, mønstre, relationer og aktivitet),
+        og først senere udvide – hvis man ønsker det.
+      </p>
+    </div>
+
+    <!-- Top banner -->
+    <div class="value-highlight rounded-2xl p-6 sm:p-8 mb-8 sm:mb-10 animate-in">
+      <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+        <div class="flex-1">
+          <div class="flex items-start sm:items-center flex-wrap gap-3 mb-3">
+            <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h16M4 12h12M4 17h16"></path>
+            </svg>
+            <h3 class="text-lg font-extrabold text-emerald-900">Dataindsamling uden partnerarbejde</h3>
+            <span class="pill-safe">Vi bruger signaler – ikke indhold</span>
+          </div>
+
+          <p class="text-stone-700 leading-relaxed max-w-4xl">
+            Systemet kan koble sig på eksisterende kilder (internt/eksternt), finde ændringer, rydde op i data og forklare,
+            hvad det betyder – og hvad et næste skridt kunne være.
+          </p>
         </div>
 
-        <p class="text-stone-700 leading-relaxed max-w-4xl">
-          Her viser vi det vigtigste “Camilla-punkt”: <strong>det kan løses i et system</strong>.
-          Partnerne skal ikke først bruge timer på workshops for at få værdi.
-          Systemet henter data, rydder op, forklarer det — og viser <strong>hvad det betyder</strong> og <strong>hvad næste skridt er</strong>.
-        </p>
-      </div>
-
-      <div class="text-left lg:text-right flex-shrink-0">
-        <p class="text-sm font-semibold text-emerald-700 mb-1">Typisk frigjort tid pr. uge</p>
-        <p class="text-5xl font-light text-emerald-600">8–12 timer</p>
-        <p class="text-xs text-stone-600 mt-2">indtastning og jagt på data fjernes</p>
+        <div class="text-left lg:text-right flex-shrink-0">
+          <p class="text-sm font-extrabold text-emerald-700 mb-1">Typisk frigjort tid pr. uge</p>
+          <p class="text-5xl font-light text-emerald-600">8–12 timer</p>
+          <p class="text-xs text-stone-600 mt-2">indtastning og “jagt på data” fjernes</p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Historien i tre trin -->
-  <div class="grid grid-cols-1 xl:grid-cols-3 gap-6 mb-10 animate-in delay-100">
-    <div class="card rounded-2xl p-6 sm:p-8">
-      <p class="text-xs font-semibold text-stone-500 uppercase tracking-wider">Trin 1</p>
-      <h3 class="serif text-2xl text-stone-900 mt-2">Vi henter signaler</h3>
-      <p class="text-sm text-stone-600 mt-2 leading-relaxed">
-        Systemet kobler sig på kendte kilder og henter <strong>ændringer</strong> og <strong>mønstre</strong>.
-        Ikke lange dokumenter – men “hvad er nyt?” og “hvad stikker ud?”.
+    <!-- Historien i tre trin -->
+    <div class="grid grid-cols-1 xl:grid-cols-3 gap-6 mb-10 animate-in delay-100">
+      <div class="card rounded-2xl p-6 sm:p-8">
+        <p class="text-xs font-extrabold text-stone-500 uppercase tracking-wider">Trin 1</p>
+        <h3 class="serif text-2xl text-stone-900 mt-2">Vi henter signaler</h3>
+        <p class="text-sm text-stone-600 mt-2 leading-relaxed">
+          Systemet kobler sig på kendte kilder og henter <strong>ændringer</strong> og <strong>mønstre</strong>.
+          Ikke lange dokumenter – men “hvad er nyt?” og “hvad stikker ud?”.
+        </p>
+        <div class="flex flex-wrap gap-2 mt-4">
+          <span class="source-tag">Sager</span>
+          <span class="source-tag">Tid</span>
+          <span class="source-tag">Fakturering</span>
+          <span class="source-tag">Offentlige registre</span>
+          <span class="source-tag">Nyheder</span>
+        </div>
+      </div>
+
+      <div class="card rounded-2xl p-6 sm:p-8">
+        <p class="text-xs font-extrabold text-stone-500 uppercase tracking-wider">Trin 2</p>
+        <h3 class="serif text-2xl text-stone-900 mt-2">Vi gør det forståeligt</h3>
+        <p class="text-sm text-stone-600 mt-2 leading-relaxed">
+          Hver anbefaling får en kort forklaring:
+          <strong>kilder</strong>, <strong>opdaterethed</strong>, <strong>dækning</strong> og <strong>hvad der mangler</strong>.
+          Det gør det trygt at handle – og trygt at lade systemet overvåge videre.
+        </p>
+        <div class="mt-4 bg-stone-50 border border-stone-200 rounded-xl p-4">
+          <p class="text-sm font-extrabold text-stone-900">Eksempel</p>
+          <p class="text-sm text-stone-700 mt-2">
+            “Ny beslutningstager + fald i aktivitet + ændret mønster” → foreslået opfølgning.
+          </p>
+        </div>
+      </div>
+
+      <div class="card rounded-2xl p-6 sm:p-8">
+        <p class="text-xs font-extrabold text-stone-500 uppercase tracking-wider">Trin 3</p>
+        <h3 class="serif text-2xl text-stone-900 mt-2">Vi logger automatisk</h3>
+        <p class="text-sm text-stone-600 mt-2 leading-relaxed">
+          Når partneren trykker “Godkend”, oprettes alt i CRM:
+          konto, kontakt, mulighed, opgaver og opfølgning.
+          Vælger partneren <strong>Overvågning</strong>, logges der stadig – uden at “fylde” i pipelinen.
+        </p>
+        <div class="mt-4 bg-blue-50 border border-blue-200 rounded-xl p-4">
+          <p class="text-sm font-extrabold text-blue-900">Nul manuelt arbejde</p>
+          <p class="text-sm text-blue-800 mt-2">
+            Systemet gør det kedelige. Partneren tager kun beslutningen.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- VISUALISERING -->
+    <div class="card rounded-2xl p-6 sm:p-8 mb-10 animate-in delay-200">
+      <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+        <div>
+          <p class="text-xs font-extrabold text-stone-500 uppercase tracking-wider">Visualisering</p>
+          <h3 class="serif text-2xl text-stone-900 mt-2">Fra data → beslutning → effekt</h3>
+          <p class="text-sm text-stone-600 mt-2 max-w-3xl leading-relaxed">
+            Data bliver til signaler, signaler bliver til en anbefaling, og handlinger bliver logget og målt.
+            Det er derfor, man kan løse det “i et system” — uden at bede partnerne om ekstra arbejde.
+          </p>
+        </div>
+
+        <div class="text-left lg:text-right">
+          <p class="text-[0.6875rem] font-extrabold text-stone-400 uppercase tracking-wider">Status</p>
+          <p class="text-lg font-extrabold text-emerald-700">Kører automatisk</p>
+          <p class="text-xs text-stone-500 mt-1">viser ændringer løbende</p>
+        </div>
+      </div>
+
+      <div class="mt-8 grid grid-cols-1 lg:grid-cols-5 gap-4 items-stretch">
+        <div class="border border-stone-200 rounded-xl p-5 bg-stone-50">
+          <p class="text-xs font-extrabold text-stone-500 uppercase tracking-wider">Kilder</p>
+          <p class="text-sm font-extrabold text-stone-900 mt-1">Internt + eksternt</p>
+          <p class="text-xs text-stone-600 mt-2">sager, tid, faktura, noter, registre, nyheder</p>
+        </div>
+
+        <div class="border border-stone-200 rounded-xl p-5">
+          <p class="text-xs font-extrabold text-stone-500 uppercase tracking-wider">Indsamling</p>
+          <p class="text-sm font-extrabold text-stone-900 mt-1">Automatisk</p>
+          <p class="text-xs text-stone-600 mt-2">planlagt hentning + ændringsdetektion</p>
+          <div class="progress-bar mt-4"><div class="progress-fill" style="width: 86%"></div></div>
+        </div>
+
+        <div class="border border-stone-200 rounded-xl p-5">
+          <p class="text-xs font-extrabold text-stone-500 uppercase tracking-wider">Sammenkædning</p>
+          <p class="text-sm font-extrabold text-stone-900 mt-1">Rydder op</p>
+          <p class="text-xs text-stone-600 mt-2">samme virksomhed/kontakt på tværs af kilder</p>
+          <div class="progress-bar mt-4"><div class="progress-fill" style="width: 78%"></div></div>
+        </div>
+
+        <div class="border border-stone-200 rounded-xl p-5">
+          <p class="text-xs font-extrabold text-stone-500 uppercase tracking-wider">Forklaring</p>
+          <p class="text-sm font-extrabold text-stone-900 mt-1">Hvorfor?</p>
+          <p class="text-xs text-stone-600 mt-2">kilder + opdaterethed + dækning + mangler</p>
+          <div class="progress-bar mt-4"><div class="progress-fill" style="width: 92%"></div></div>
+        </div>
+
+        <div class="border border-emerald-200 rounded-xl p-5 bg-emerald-50">
+          <p class="text-xs font-extrabold text-emerald-700 uppercase tracking-wider">Beslutning</p>
+          <p class="text-sm font-extrabold text-emerald-900 mt-1">Godkend / Overvåg</p>
+          <p class="text-xs text-emerald-800 mt-2">alt logges i CRM uden manuel indsats</p>
+        </div>
+      </div>
+
+      <div class="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <div class="bg-white border border-stone-200 rounded-xl p-5">
+          <p class="text-sm font-extrabold text-stone-900">Sporbarhed</p>
+          <p class="text-sm text-stone-600 mt-2">hver anbefaling har et spor tilbage til kilderne</p>
+        </div>
+        <div class="bg-white border border-stone-200 rounded-xl p-5">
+          <p class="text-sm font-extrabold text-stone-900">Opdaterethed</p>
+          <p class="text-sm text-stone-600 mt-2">du kan se om data er nye eller gamle</p>
+        </div>
+        <div class="bg-white border border-stone-200 rounded-xl p-5">
+          <p class="text-sm font-extrabold text-stone-900">Mangelliste</p>
+          <p class="text-sm text-stone-600 mt-2">hvis noget mangler, står det eksplicit (og kan hentes)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tryghed -->
+    <div class="card rounded-2xl p-6 sm:p-8 animate-in delay-300">
+      <p class="text-xs font-extrabold text-stone-500 uppercase tracking-wider">Tryghed</p>
+      <h3 class="serif text-2xl text-stone-900 mt-2">Det vi ikke rører (i denne version)</h3>
+      <p class="text-sm text-stone-600 mt-2 max-w-4xl leading-relaxed">
+        For at holde det enkelt og trygt kan værdien bygges på <strong>signaler og metadata</strong> — ikke på indhold i fortrolige dokumenter.
+        Derfor kan man starte hurtigt, uden at der skal ændres arbejdsgange.
       </p>
-      <div class="flex flex-wrap gap-2 mt-4">
-        <span class="source-tag">Sager og tid</span>
-        <span class="source-tag">Fakturering</span>
-        <span class="source-tag">Kundedata</span>
-        <span class="source-tag">Offentlige registre</span>
-        <span class="source-tag">Nyheder</span>
+
+      <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-stone-50 border border-stone-200 rounded-xl p-5">
+          <p class="text-sm font-extrabold text-stone-900">Vi bruger</p>
+          <ul class="text-sm text-stone-700 mt-2 space-y-1.5 list-disc pl-5">
+            <li>tidsstempler og ændringer</li>
+            <li>koblinger mellem konto/kontakt/sag</li>
+            <li>aktivitetsmønstre (op/ned)</li>
+            <li>offentlige virksomhedsoplysninger</li>
+          </ul>
+        </div>
+
+        <div class="bg-stone-50 border border-stone-200 rounded-xl p-5">
+          <p class="text-sm font-extrabold text-stone-900">Vi undgår</p>
+          <ul class="text-sm text-stone-700 mt-2 space-y-1.5 list-disc pl-5">
+            <li>indhold i fortrolige dokumenter</li>
+            <li>at “læse” følsomme tekster</li>
+            <li>at kræve partnerindtastning for at starte</li>
+            <li>at skabe ekstra administrativt arbejde</li>
+          </ul>
+        </div>
       </div>
     </div>
 
-    <div class="card rounded-2xl p-6 sm:p-8">
-      <p class="text-xs font-semibold text-stone-500 uppercase tracking-wider">Trin 2</p>
-      <h3 class="serif text-2xl text-stone-900 mt-2">Vi gør det forståeligt</h3>
-      <p class="text-sm text-stone-600 mt-2 leading-relaxed">
-        Hver anbefaling får en kort forklaring:
-        <strong>kilder</strong>, <strong>friskhed</strong>, <strong>dækning</strong> og <strong>hvad der mangler</strong>.
-        Det gør det trygt at handle – og trygt at lade systemet overvåge videre.
-      </p>
-      <div class="mt-4 bg-stone-50 border border-stone-200 rounded-xl p-4">
-        <p class="text-sm font-semibold text-stone-900">Eksempel</p>
-        <p class="text-sm text-stone-700 mt-2">
-          “Ny beslutningstager + fald i aktivitet + ændret indkøbsmønster” → anbefalet opfølgning.
-        </p>
-      </div>
-    </div>
-
-    <div class="card rounded-2xl p-6 sm:p-8">
-      <p class="text-xs font-semibold text-stone-500 uppercase tracking-wider">Trin 3</p>
-      <h3 class="serif text-2xl text-stone-900 mt-2">Vi logfører automatisk</h3>
-      <p class="text-sm text-stone-600 mt-2 leading-relaxed">
-        Når partneren trykker “Godkend”, oprettes alt i CRM:
-        konto, kontakt, mulighed, opgaver og opfølgning.
-        Hvis partneren vælger <strong>Overvågning</strong>, logges der stadig – uden at “fylde” i pipelinen.
-      </p>
-      <div class="mt-4 bg-blue-50 border border-blue-200 rounded-xl p-4">
-        <p class="text-sm font-semibold text-blue-900">Nul manuelt arbejde</p>
-        <p class="text-sm text-blue-800 mt-2">
-          Systemet gør det kedelige. Partneren tager kun beslutningen.
-        </p>
-      </div>
+    <div class="pb-10 mt-10">
+      <button class="btn btn-secondary" onclick="showPage('mulighed')">Tilbage til Mulighedsoverblik</button>
     </div>
   </div>
-
-  <!-- VISUALISERING: Datarejse -->
-  <div class="card rounded-2xl p-6 sm:p-8 mb-10 animate-in delay-200">
-    <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
-      <div>
-        <p class="text-xs font-semibold text-stone-500 uppercase tracking-wider">Visualisering</p>
-        <h3 class="serif text-2xl text-stone-900 mt-2">Fra data → beslutning → effekt</h3>
-        <p class="text-sm text-stone-600 mt-2 max-w-3xl leading-relaxed">
-          Data bliver til signaler, signaler bliver til en anbefaling, og handlinger bliver logført og målt.
-          Det er grunden til, at man kan løse det “i et system” — uden at bede partnerne om ekstra arbejde.
-        </p>
-      </div>
-
-      <div class="text-left lg:text-right">
-        <p class="text-[0.6875rem] font-semibold text-stone-400 uppercase tracking-wider">Status</p>
-        <p class="text-lg font-semibold text-emerald-700">Kører automatisk</p>
-        <p class="text-xs text-stone-500 mt-1">viser ændringer løbende</p>
-      </div>
-    </div>
-
-    <div class="mt-8 grid grid-cols-1 lg:grid-cols-5 gap-4 items-stretch">
-      <div class="border border-stone-200 rounded-xl p-5 bg-stone-50">
-        <p class="text-xs font-semibold text-stone-500 uppercase tracking-wider">Kilder</p>
-        <p class="text-sm font-semibold text-stone-900 mt-1">Internt + eksternt</p>
-        <p class="text-xs text-stone-600 mt-2">sager, tid, faktura, noter, registre, nyheder</p>
-      </div>
-
-      <div class="border border-stone-200 rounded-xl p-5">
-        <p class="text-xs font-semibold text-stone-500 uppercase tracking-wider">Indsamling</p>
-        <p class="text-sm font-semibold text-stone-900 mt-1">Automatisk</p>
-        <p class="text-xs text-stone-600 mt-2">planlagt hentning + ændringsdetektion</p>
-        <div class="progress-bar mt-4"><div class="progress-fill" style="width: 86%"></div></div>
-      </div>
-
-      <div class="border border-stone-200 rounded-xl p-5">
-        <p class="text-xs font-semibold text-stone-500 uppercase tracking-wider">Sammenkædning</p>
-        <p class="text-sm font-semibold text-stone-900 mt-1">Rydder op</p>
-        <p class="text-xs text-stone-600 mt-2">samme virksomhed/kontakt på tværs af kilder</p>
-        <div class="progress-bar mt-4"><div class="progress-fill" style="width: 78%"></div></div>
-      </div>
-
-      <div class="border border-stone-200 rounded-xl p-5">
-        <p class="text-xs font-semibold text-stone-500 uppercase tracking-wider">Forklaring</p>
-        <p class="text-sm font-semibold text-stone-900 mt-1">Hvorfor?</p>
-        <p class="text-xs text-stone-600 mt-2">kilder + friskhed + dækning + mangler</p>
-        <div class="progress-bar mt-4"><div class="progress-fill" style="width: 92%"></div></div>
-      </div>
-
-      <div class="border border-emerald-200 rounded-xl p-5 bg-emerald-50">
-        <p class="text-xs font-semibold text-emerald-700 uppercase tracking-wider">Beslutning</p>
-        <p class="text-sm font-semibold text-emerald-900 mt-1">Godkend / Overvåg</p>
-        <p class="text-xs text-emerald-800 mt-2">alt logføres i CRM uden manuel indsats</p>
-      </div>
-    </div>
-
-    <div class="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-4">
-      <div class="bg-white border border-stone-200 rounded-xl p-5">
-        <p class="text-sm font-semibold text-stone-900">Sporbarhed</p>
-        <p class="text-sm text-stone-600 mt-2">hver anbefaling har et spor tilbage til kilderne</p>
-      </div>
-      <div class="bg-white border border-stone-200 rounded-xl p-5">
-        <p class="text-sm font-semibold text-stone-900">Friskhed</p>
-        <p class="text-sm text-stone-600 mt-2">du ser tydeligt om data er nye eller gamle</p>
-      </div>
-      <div class="bg-white border border-stone-200 rounded-xl p-5">
-        <p class="text-sm font-semibold text-stone-900">Mangelliste</p>
-        <p class="text-sm text-stone-600 mt-2">hvis noget mangler, står det eksplicit (og kan hentes)</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Tryghed: hvad vi ikke gør -->
-  <div class="card rounded-2xl p-6 sm:p-8 animate-in delay-300">
-    <p class="text-xs font-semibold text-stone-500 uppercase tracking-wider">Tryghed</p>
-    <h3 class="serif text-2xl text-stone-900 mt-2">Det vi ikke rører</h3>
-    <p class="text-sm text-stone-600 mt-2 max-w-4xl leading-relaxed">
-      For at holde det enkelt og trygt: værdien kan bygges på <strong>signaler og metadata</strong> —
-      ikke på indhold fra fortrolige dokumenter. Derfor kan løsningen skaleres hurtigt, og partnerne
-      skal ikke “give mere” for at få værdi.
-    </p>
-
-    <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
-      <div class="bg-stone-50 border border-stone-200 rounded-xl p-5">
-        <p class="text-sm font-semibold text-stone-900">Vi bruger</p>
-        <ul class="text-sm text-stone-700 mt-2 space-y-1.5 list-disc pl-5">
-          <li>tidsstempler og ændringer</li>
-          <li>koblinger mellem konto/kontakt/sag</li>
-          <li>aktivitetsmønstre (op/ned)</li>
-          <li>offentlige virksomhedsoplysninger</li>
-        </ul>
-      </div>
-
-      <div class="bg-stone-50 border border-stone-200 rounded-xl p-5">
-        <p class="text-sm font-semibold text-stone-900">Vi undgår</p>
-        <ul class="text-sm text-stone-700 mt-2 space-y-1.5 list-disc pl-5">
-          <li>indhold i fortrolige dokumenter</li>
-          <li>at “læse” følsomme tekster</li>
-          <li>at kræve partnerindtastning for at starte</li>
-          <li>at skabe ekstra administrativt arbejde</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="pb-10 mt-10">
-    <button class="btn btn-secondary" onclick="showPage('mulighed')">Tilbage til Mulighedsoverblik</button>
-  </div>
-</div>
-<!-- ====================== SLUT SIDE: DATAINDSAMLING ====================== -->
+  <!-- ====================== SLUT SIDE: DATAINDSAMLING ====================== -->
 
   <!-- ====================== RAG Drawer ====================== -->
   <div id="ragDrawer" class="fixed inset-0 z-[60] hidden">
     <div class="absolute inset-0 bg-black/30" onclick="closeRagDrawer()"></div>
 
-    <!-- drawer responsive width -->
     <div class="absolute right-0 top-0 h-full w-full sm:w-[540px] bg-white shadow-2xl border-l border-stone-200 p-6 sm:p-8 overflow-y-auto">
       <div class="flex items-start justify-between gap-4">
         <div>
-          <p class="text-xs font-semibold text-stone-500 uppercase tracking-wider">RAG Source Trail</p>
-          <h3 class="serif text-2xl text-stone-900 mt-2">Hvorfor denne anbefaling?</h3>
-          <p class="text-sm text-stone-600 mt-2">Auditérbar forklaring: evidence density, freshness, gaps og citations.</p>
+          <p class="text-xs font-extrabold text-stone-500 uppercase tracking-wider">Kilder og forklaring</p>
+          <h3 class="serif text-2xl text-stone-900 mt-2">Hvorfor anbefaler systemet dette?</h3>
+          <p class="text-sm text-stone-600 mt-2">
+            Her kan man auditere: hvor tæt evidensen er, hvor nye data er, og hvad der mangler.
+          </p>
         </div>
         <button class="btn btn-ghost" onclick="closeRagDrawer()">Luk</button>
       </div>
@@ -1445,66 +1589,66 @@
       <div class="mt-6 space-y-4">
         <div class="card rounded-xl p-5">
           <div class="flex items-center justify-between">
-            <p class="text-sm font-semibold text-stone-900">Signal summary</p>
-            <span class="badge badge-automated">Auto-audited</span>
+            <p class="text-sm font-extrabold text-stone-900">Kort opsummering</p>
+            <span class="badge badge-automated">Auto-tjekket</span>
           </div>
           <ul class="mt-3 text-sm text-stone-700 space-y-2 list-disc pl-5">
-            <li><strong>Evidence density:</strong> 8 dokumenter, 22 datapunkter, 4 uafhængige kildetyper</li>
-            <li><strong>Freshness:</strong> 2 datapunkter opdateret i dag</li>
-            <li><strong>Gaps:</strong> Mangler: budget/forecast + ejerstrategi (AMBER hvis ikke fundet inden 72t)</li>
+            <li><strong>Evidens:</strong> 8 kilder, 22 datapunkter, 4 kildetyper</li>
+            <li><strong>Opdaterethed:</strong> flere datapunkter opdateret i dag</li>
+            <li><strong>Mangler:</strong> hvis noget er ufuldstændigt, vises det her (så du ved hvorfor)</li>
           </ul>
         </div>
 
         <div class="card rounded-xl p-5">
           <div class="flex items-center justify-between">
-            <p class="text-sm font-semibold text-stone-900">What changed since yesterday</p>
-            <span class="source-tag">Diff</span>
+            <p class="text-sm font-extrabold text-stone-900">Hvad er ændret siden i går?</p>
+            <span class="source-tag">Ændringsspor</span>
           </div>
           <div class="mt-3 space-y-3 text-sm">
             <div class="bg-stone-50 border border-stone-200 rounded-lg p-4">
-              <p class="font-semibold text-stone-900">+ New signal</p>
-              <p class="text-stone-600 mt-1">CFO role transition bekræftet (timestamp + reference)</p>
+              <p class="font-extrabold text-stone-900">+ Nyt signal</p>
+              <p class="text-stone-600 mt-1">Ledelsesændring bekræftet (timestamp + reference)</p>
             </div>
             <div class="bg-stone-50 border border-stone-200 rounded-lg p-4">
-              <p class="font-semibold text-stone-900">~ Updated</p>
-              <p class="text-stone-600 mt-1">Working capital trend: ny kvartalsnote parsed</p>
+              <p class="font-extrabold text-stone-900">~ Opdateret</p>
+              <p class="text-stone-600 mt-1">Trend i aktivitet opdateret med ny note</p>
             </div>
           </div>
         </div>
 
         <div class="card rounded-xl p-5">
-          <p class="text-sm font-semibold text-stone-900 mb-3">Citations (klikbare internt)</p>
+          <p class="text-sm font-extrabold text-stone-900 mb-3">Kilder (klikbart internt)</p>
           <div class="space-y-3 text-sm">
             <div class="intelligence-item rounded-lg border border-stone-200">
               <div class="flex items-center justify-between">
-                <p class="font-semibold text-stone-900">CVR udtræk</p>
-                <span class="source-tag">Fresh: 1d</span>
+                <p class="font-extrabold text-stone-900">CVR-udtræk</p>
+                <span class="source-tag">Opdateret: 1d</span>
               </div>
-              <p class="text-stone-600 mt-1">Org. ændringer + ejerstruktur + nøglepersoner</p>
+              <p class="text-stone-600 mt-1">ændringer, ejerstruktur, nøglepersoner</p>
             </div>
 
             <div class="intelligence-item rounded-lg border border-stone-200">
               <div class="flex items-center justify-between">
-                <p class="font-semibold text-stone-900">Årsrapport</p>
-                <span class="source-tag">Fresh: 14d</span>
+                <p class="font-extrabold text-stone-900">Årsrapport</p>
+                <span class="source-tag">Opdateret: 14d</span>
               </div>
-              <p class="text-stone-600 mt-1">Likviditet, working capital, note disclosures</p>
+              <p class="text-stone-600 mt-1">likviditet, nøgletal, noter</p>
             </div>
 
             <div class="intelligence-item rounded-lg border border-stone-200">
               <div class="flex items-center justify-between">
-                <p class="font-semibold text-stone-900">Internal CRM notes</p>
-                <span class="source-tag">Fresh: 3d</span>
+                <p class="font-extrabold text-stone-900">Interne noter</p>
+                <span class="source-tag">Opdateret: 3d</span>
               </div>
-              <p class="text-stone-600 mt-1">Tidligere relation + sidste mandat + stakeholders</p>
+              <p class="text-stone-600 mt-1">relation, tidligere sager, stakeholders</p>
             </div>
 
             <div class="intelligence-item rounded-lg border border-stone-200">
               <div class="flex items-center justify-between">
-                <p class="font-semibold text-stone-900">News / Market signals</p>
-                <span class="source-tag">Fresh: 2d</span>
+                <p class="font-extrabold text-stone-900">Nyheder / marked</p>
+                <span class="source-tag">Opdateret: 2d</span>
               </div>
-              <p class="text-stone-600 mt-1">Sector consolidation + comparable transactions</p>
+              <p class="text-stone-600 mt-1">branche-bevægelser, sammenlignelige cases</p>
             </div>
           </div>
         </div>
@@ -1516,68 +1660,67 @@
   <div id="crmModal" class="fixed inset-0 z-[70] hidden">
     <div class="absolute inset-0 bg-black/30" onclick="closeCrmModal()"></div>
 
-    <!-- modal responsive: full width on mobile + scroll -->
     <div class="absolute left-1/2 top-1/2 w-[calc(100%-1.5rem)] sm:w-[900px] -translate-x-1/2 -translate-y-1/2 bg-white shadow-2xl rounded-2xl border border-stone-200 overflow-hidden max-h-[85vh]">
       <div class="p-5 sm:p-7 border-b border-stone-200 flex items-center justify-between gap-4">
         <div>
-          <p class="text-xs font-semibold text-stone-500 uppercase tracking-wider">CRM preview</p>
-          <h3 class="serif text-xl sm:text-2xl text-stone-900 mt-1">Det her bliver oprettet — uden manuelt arbejde</h3>
+          <p class="text-xs font-extrabold text-stone-500 uppercase tracking-wider">CRM forhåndsvisning</p>
+          <h3 class="serif text-xl sm:text-2xl text-stone-900 mt-1">Det her bliver oprettet – uden manuel indtastning</h3>
         </div>
         <button class="btn btn-ghost" onclick="closeCrmModal()">Luk</button>
       </div>
 
       <div class="p-5 sm:p-7 grid grid-cols-1 sm:grid-cols-2 gap-6 overflow-y-auto" style="max-height: calc(85vh - 140px);">
         <div class="card rounded-xl p-6">
-          <p class="text-sm font-semibold text-stone-900 mb-4">Objects</p>
+          <p class="text-sm font-extrabold text-stone-900 mb-4">Oprettes i CRM</p>
           <ul class="text-sm text-stone-700 space-y-2">
-            <li>✓ Account: <strong id="crmAccountName">Nordic Blue Robotics ApS</strong></li>
-            <li>✓ Contact: <strong id="crmContactName">Andreas Møller</strong> (Primary)</li>
-            <li>✓ Opportunity: <strong>M&A / Divestment</strong> (Stage: “Identified”)</li>
-            <li>✓ Activities: call task + follow-up sequence</li>
+            <li>✓ Konto: <strong id="crmAccountName">Nordic Blue Robotics ApS</strong></li>
+            <li>✓ Kontakt: <strong id="crmContactName">Andreas Møller</strong> (primær)</li>
+            <li>✓ Mulighed: <strong>M&A / Frasalg</strong> (stadie: “Identificeret”)</li>
+            <li>✓ Aktiviteter: opgave + opfølgning</li>
           </ul>
         </div>
 
         <div class="card rounded-xl p-6">
-          <p class="text-sm font-semibold text-stone-900 mb-4">Audit & safety</p>
+          <p class="text-sm font-extrabold text-stone-900 mb-4">Tryghed og kontrol</p>
           <ul class="text-sm text-stone-700 space-y-2">
-            <li>✓ Conflict check logges (timestamp + result)</li>
-            <li>✓ Idempotency: ingen duplicates ved gentagne klik</li>
-            <li>✓ Evidence trail gemmes på opportunity</li>
-            <li>✓ Partner effort: <strong>0 min</strong> (auto-log ON)</li>
+            <li>✓ Konflikt-check logges (tid + resultat)</li>
+            <li>✓ Ingen dubletter ved gentagne klik</li>
+            <li>✓ Kildespor gemmes på muligheden</li>
+            <li>✓ Partner-indsats: <strong>0 min</strong> (auto-log)</li>
           </ul>
         </div>
 
         <div class="sm:col-span-2 card rounded-xl p-6">
           <div class="flex items-center justify-between">
-            <p class="text-sm font-semibold text-stone-900">Field mapping (eksempel)</p>
-            <span class="crm-badge">Internal CRM</span>
+            <p class="text-sm font-extrabold text-stone-900">Eksempel på felter</p>
+            <span class="crm-badge">CRM</span>
           </div>
 
           <div class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
             <div class="bg-stone-50 border border-stone-200 rounded-lg p-4">
-              <p class="text-xs font-semibold text-stone-500 uppercase tracking-wider">RAG</p>
-              <p class="mt-2 text-stone-800">Confidence: <span id="crmRagConfidence">94%</span></p>
-              <p class="text-stone-600">Status: <span id="crmRagStatus">GREEN</span></p>
+              <p class="text-xs font-extrabold text-stone-500 uppercase tracking-wider">Data</p>
+              <p class="mt-2 text-stone-800">Tillidsscore: <span id="crmRagConfidence">94%</span></p>
+              <p class="text-stone-600">Status: <span id="crmRagStatus">GRØN</span></p>
             </div>
 
             <div class="bg-stone-50 border border-stone-200 rounded-lg p-4">
-              <p class="text-xs font-semibold text-stone-500 uppercase tracking-wider">Lead</p>
-              <p class="mt-2 text-stone-800">Win prob: 73%</p>
-              <p class="text-stone-600">Deal value: 4.7M</p>
+              <p class="text-xs font-extrabold text-stone-500 uppercase tracking-wider">Vurdering</p>
+              <p class="mt-2 text-stone-800">Sandsynlighed: 73%</p>
+              <p class="text-stone-600">Potentiale: 4,7M</p>
             </div>
 
             <div class="bg-stone-50 border border-stone-200 rounded-lg p-4">
-              <p class="text-xs font-semibold text-stone-500 uppercase tracking-wider">Next best action</p>
-              <p class="mt-2 text-stone-800">Call before 16:00</p>
-              <p class="text-stone-600">Sequence: D+2/D+7/D+14</p>
+              <p class="text-xs font-extrabold text-stone-500 uppercase tracking-wider">Næste skridt</p>
+              <p class="mt-2 text-stone-800">Ring før 16:00</p>
+              <p class="text-stone-600">Opfølgning: D+2/D+7/D+14</p>
             </div>
           </div>
 
           <div class="mt-4 bg-blue-50 border border-blue-200 rounded-xl p-5">
-            <p class="text-sm font-semibold text-blue-900 mb-2">Zero-effort promise</p>
+            <p class="text-sm font-extrabold text-blue-900 mb-2">Partner-venligt</p>
             <p class="text-sm text-blue-800">
-              Når du sync’er, oprettes og logges alt automatisk i CRM. Hvis du vælger <strong>Monitoring</strong>, oprettes lead som “Monitoring”
-              (ikke pipeline-forurening), men evidence trail + signals opdateres løbende.
+              Godkender du, oprettes alt automatisk i CRM. Vælger du <strong>Overvågning</strong>, logges sagen som “overvågning”
+              (så den ikke fylder i pipelinen), men kildespor og signaler opdateres løbende.
             </p>
           </div>
         </div>
@@ -1585,12 +1728,12 @@
 
       <div class="p-5 sm:p-7 border-t border-stone-200 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div class="text-sm text-stone-600">
-          Tip: Brug “Monitoring (0 min)” i mødet for at vise “ingen pres, kun upside”.
+          Tip: Brug “Overvågning (0 min)” i mødet for at vise “ingen pres – kun upside”.
         </div>
         <div class="flex items-center gap-3 flex-wrap">
-          <button class="btn btn-secondary" onclick="enableMonitoringOnly()">Sæt til Monitoring (ingen handling)</button>
+          <button class="btn btn-secondary" onclick="enableMonitoringOnly()">Vælg overvågning</button>
           <button class="btn btn-primary" onclick="syncToCrm()">
-            Godkend & sync til CRM <span class="text-xs opacity-80">(1 klik)</span>
+            Godkend & opret i CRM <span class="text-xs opacity-80">(1 klik)</span>
           </button>
         </div>
       </div>
@@ -1600,61 +1743,60 @@
   <!-- ====================== JS ====================== -->
   <script>
     function toggleMereMenu() {
-  document.getElementById("mereMenu")?.classList.toggle("hidden");
-}
-function closeMereMenu() {
-  document.getElementById("mereMenu")?.classList.add("hidden");
-}
+      document.getElementById("mereMenu")?.classList.toggle("hidden");
+    }
+    function closeMereMenu() {
+      document.getElementById("mereMenu")?.classList.add("hidden");
+    }
 
-/* Luk dropdown når man klikker udenfor */
-document.addEventListener("click", (e) => {
-  const wrap = document.getElementById("mereMenuWrap");
-  if (!wrap) return;
-  if (!wrap.contains(e.target)) closeMereMenu();
-});
+    document.addEventListener("click", (e) => {
+      const wrap = document.getElementById("mereMenuWrap");
+      if (!wrap) return;
+      if (!wrap.contains(e.target)) closeMereMenu();
+    });
 
     const partners = {
-      camilla: { upside: "+2.4M", timeSaved: "11.3h sparet", rag: { status: "GREEN", confidence: 94, freshness: "0–2 dage", coverage: "8/10 essentials" } },
-      morten:  { upside: "+4.1M", timeSaved: "8.6h sparet",  rag: { status: "AMBER", confidence: 88, freshness: "2–7 dage", coverage: "7/10 essentials" } },
-      sara:    { upside: "+1.7M", timeSaved: "6.1h sparet",  rag: { status: "GREEN", confidence: 92, freshness: "0–2 dage", coverage: "9/10 essentials" } }
+      camilla: { upside: "+2,4M", timeSaved: "11,3h sparet", rag: { status: "GREEN", confidence: 94, freshness: "0–2 dage", coverage: "8/10 vigtige punkter" } },
+      morten:  { upside: "+4,1M", timeSaved: "8,6h sparet",  rag: { status: "AMBER", confidence: 88, freshness: "2–7 dage", coverage: "7/10 vigtige punkter" } },
+      sara:    { upside: "+1,7M", timeSaved: "6,1h sparet",  rag: { status: "GREEN", confidence: 92, freshness: "0–2 dage", coverage: "9/10 vigtige punkter" } }
     };
 
     let monitoringOn = true;
 
     function showPage(page) {
-  const pages = {
-    mulighed: document.getElementById("pageMulighed"),
-    kunde: document.getElementById("pageKunde"),
-    partner: document.getElementById("pagePartner"),
-    data: document.getElementById("pageData")
-  };
+      const pages = {
+        mulighed: document.getElementById("pageMulighed"),
+        kunde: document.getElementById("pageKunde"),
+        partner: document.getElementById("pagePartner"),
+        data: document.getElementById("pageData")
+      };
 
-  const navMulighed = document.getElementById("navMulighed");
-  const navKunde = document.getElementById("navKunde");
-  const navMere = document.getElementById("navMere");
+      const navMulighed = document.getElementById("navMulighed");
+      const navKunde = document.getElementById("navKunde");
+      const navMere = document.getElementById("navMere");
 
-  Object.values(pages).forEach(p => p?.classList.add("hidden"));
-  pages[page]?.classList.remove("hidden");
+      Object.values(pages).forEach(p => p?.classList.add("hidden"));
+      pages[page]?.classList.remove("hidden");
 
-  navMulighed?.classList.remove("nav-active");
-  navKunde?.classList.remove("nav-active");
-  navMere?.classList.remove("nav-active");
+      navMulighed?.classList.remove("nav-active");
+      navKunde?.classList.remove("nav-active");
+      navMere?.classList.remove("nav-active");
 
-  if (page === "mulighed") navMulighed?.classList.add("nav-active");
-  else if (page === "kunde") navKunde?.classList.add("nav-active");
-  else navMere?.classList.add("nav-active");
+      if (page === "mulighed") navMulighed?.classList.add("nav-active");
+      else if (page === "kunde") navKunde?.classList.add("nav-active");
+      else navMere?.classList.add("nav-active");
 
-  window.scrollTo({ top: 0, behavior: "smooth" });
+      window.scrollTo({ top: 0, behavior: "smooth" });
 
-  const label = {
-    mulighed: "Mulighedsoverblik",
-    kunde: "Kundeudvikling",
-    partner: "Partneroverblik",
-    data: "Dataindsamling"
-  }[page] || "Side";
+      const label = {
+        mulighed: "Mulighedsoverblik",
+        kunde: "Kundeudvikling",
+        partner: "Partneroverblik",
+        data: "Dataindsamling"
+      }[page] || "Side";
 
-  toast(label);
-}
+      toast(label);
+    }
 
     function setRagUI(rag) {
       const pill = document.getElementById("ragStatusPill");
@@ -1667,18 +1809,18 @@ document.addEventListener("click", (e) => {
 
       conf.textContent = rag.confidence + "%";
       bar.style.width = rag.confidence + "%";
-      fresh.textContent = "Freshness: " + rag.freshness;
-      cov.textContent = "Coverage: " + rag.coverage;
+      fresh.textContent = "Opdateret: " + rag.freshness;
+      cov.textContent = "Dækning: " + rag.coverage;
 
       if (rag.status === "GREEN") {
         pill.className = "badge badge-opportunity";
-        pill.innerHTML = '<div class="w-1.5 h-1.5 bg-teal-700 rounded-full"></div> RAG: GREEN';
+        pill.innerHTML = '<div class="w-1.5 h-1.5 bg-teal-700 rounded-full"></div> Datatroværdighed: GRØN';
       } else if (rag.status === "AMBER") {
         pill.className = "badge badge-high";
-        pill.innerHTML = '<div class="w-1.5 h-1.5 bg-white rounded-full"></div> RAG: AMBER';
+        pill.innerHTML = '<div class="w-1.5 h-1.5 bg-white rounded-full"></div> Datatroværdighed: GUL';
       } else {
         pill.className = "badge badge-critical";
-        pill.innerHTML = '<div class="w-1.5 h-1.5 bg-white rounded-full"></div> RAG: RED';
+        pill.innerHTML = '<div class="w-1.5 h-1.5 bg-white rounded-full"></div> Datatroværdighed: RØD';
       }
     }
 
@@ -1693,7 +1835,7 @@ document.addEventListener("click", (e) => {
         const crmConf = document.getElementById("crmRagConfidence");
         const crmStat = document.getElementById("crmRagStatus");
         if (crmConf) crmConf.textContent = p.rag.confidence + "%";
-        if (crmStat) crmStat.textContent = p.rag.status;
+        if (crmStat) crmStat.textContent = (p.rag.status === "GREEN") ? "GRØN" : "GUL";
       });
 
       const initP = partners[partnerSelect.value];
@@ -1704,7 +1846,7 @@ document.addEventListener("click", (e) => {
       const crmConf = document.getElementById("crmRagConfidence");
       const crmStat = document.getElementById("crmRagStatus");
       if (crmConf) crmConf.textContent = initP.rag.confidence + "%";
-      if (crmStat) crmStat.textContent = initP.rag.status;
+      if (crmStat) crmStat.textContent = (initP.rag.status === "GREEN") ? "GRØN" : "GUL";
     }
 
     function openRagDrawer() { document.getElementById("ragDrawer").classList.remove("hidden"); }
@@ -1712,21 +1854,23 @@ document.addEventListener("click", (e) => {
 
     function toggleMonitoring() {
       monitoringOn = !monitoringOn;
-      document.getElementById("monitoringState").textContent = monitoringOn ? "ON" : "OFF";
-      toast("Monitoring: " + (monitoringOn ? "ON" : "OFF") + " • Auto-log " + (monitoringOn ? "aktiv" : "pauset"));
+      document.getElementById("monitoringState").textContent = monitoringOn ? "TIL" : "FRA";
+      toast("Overvågning: " + (monitoringOn ? "TIL" : "FRA") + " • logning " + (monitoringOn ? "kører" : "pauset"));
     }
 
     function enableMonitoringOnly() {
       monitoringOn = true;
-      document.getElementById("monitoringState").textContent = "ON";
+      document.getElementById("monitoringState").textContent = "TIL";
       closeCrmModal();
-      toast("Monitoring valgt • 0 min • systemet fortsætter og logger i CRM");
+      toast("Overvågning valgt • 0 min • systemet fortsætter og logger");
     }
 
     function openCrmModal() {
-      const currentStatus = (document.getElementById("ragStatusPill")?.textContent || "GREEN").replace("RAG:", "").trim();
+      const currentStatusText = document.getElementById("ragStatusPill")?.textContent || "Datatroværdighed: GRØN";
       const currentConf = document.getElementById("ragConfidence")?.textContent || "94%";
-      document.getElementById("crmRagStatus").textContent = currentStatus;
+
+      const isGreen = currentStatusText.includes("GRØN") || currentStatusText.includes("GREEN");
+      document.getElementById("crmRagStatus").textContent = isGreen ? "GRØN" : "GUL";
       document.getElementById("crmRagConfidence").textContent = currentConf;
 
       document.getElementById("crmModal").classList.remove("hidden");
@@ -1740,22 +1884,22 @@ document.addEventListener("click", (e) => {
         mode: monitoringOn ? "active" : "manual",
         account: { name: document.getElementById("crmAccountName")?.textContent || "Nordic Blue Robotics ApS" },
         contact: { name: document.getElementById("crmContactName")?.textContent || "Andreas Møller", role: "CFO" },
-        opportunity: { type: "M&A / Divestment", stage: "Identified", deal_value_dkk: 4700000, win_prob: 0.73 },
-        rag: {
-          status: document.getElementById("crmRagStatus")?.textContent || "GREEN",
+        opportunity: { type: "M&A / Frasalg", stage: "Identificeret", deal_value_dkk: 4700000, win_prob: 0.73 },
+        data_trust: {
+          status: document.getElementById("crmRagStatus")?.textContent || "GRØN",
           confidence: document.getElementById("crmRagConfidence")?.textContent || "94%"
         },
         actions: [
-          { type: "task", title: "Call Andreas Møller", due: "today 15:00", auto_log: true },
-          { type: "sequence", name: "D+2/D+7/D+14", auto_log: true }
+          { type: "task", title: "Ring til Andreas Møller", due: "i dag 15:00", auto_log: true },
+          { type: "followup", name: "D+2/D+7/D+14", auto_log: true }
         ],
-        audit: { conflict_check: "auto-cleared", evidence_trail: true, no_manual_entry: true }
+        audit: { conflict_check: "auto-ok", evidence_trail: true, no_manual_entry: true }
       };
 
       console.log("CRM SYNC PAYLOAD:", payload);
 
       closeCrmModal();
-      toast("Synced til CRM • Auto-log ON • 0 manuel indsats");
+      toast("Oprettet i CRM • auto-log kører • 0 manuel indsats");
     }
 
     function cryptoRandomKey() {
@@ -1764,19 +1908,16 @@ document.addEventListener("click", (e) => {
 
     function toast(message) {
       const el = document.createElement("div");
-      // Mobile: centered + full width; Desktop: bottom-right
       el.className = "fixed bottom-6 left-1/2 -translate-x-1/2 sm:left-auto sm:translate-x-0 sm:right-6 z-[80] bg-white border border-stone-200 shadow-xl rounded-xl px-5 py-3 text-sm text-stone-800 w-[calc(100%-2rem)] sm:w-auto";
-      el.innerHTML = `<div class="flex items-center gap-2"><span class="crm-badge">CRM</span><span>${message}</span></div>`;
+      el.innerHTML = `<div class="flex items-center gap-2"><span class="crm-badge">LOG</span><span>${message}</span></div>`;
       document.body.appendChild(el);
       setTimeout(() => el.remove(), 3200);
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("navMulighed")?.classList.add("nav-active");
-  showPage("mulighed");
-});
-
+      document.getElementById("navMulighed")?.classList.add("nav-active");
+      showPage("mulighed");
+    });
   </script>
 </body>
 </html>
-
