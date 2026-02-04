@@ -394,9 +394,8 @@
               </select>
               <span id="partnerBadge" class="badge badge-automated">Demo-visning</span>
             </div>
+            </div>
       
-
-
         <!-- CRM badge -->
         <div class="flex items-center justify-between gap-3 px-4 py-2 bg-blue-50 rounded-lg border border-blue-100 w-full lg:w-auto">
           <div class="flex items-center gap-3">
@@ -1852,33 +1851,33 @@ push_drafts_to_crm(drafts)</code></pre>
       document.body.appendChild(el);
       setTimeout(() => el.remove(), 3200);
     }
-    function updateDateTime() {
-    const now = new Date();
-    
-    // Ugedag (fx "Tirsdag")
-    const days = ['Søndag', 'Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag'];
-    document.getElementById('current-day').textContent = days[now.getDay()];
+  function updateDateTime() {
+  const now = new Date();
+  
+  const days = ['Søndag', 'Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag'];
+  const dayEl = document.getElementById('current-day');
+  if (dayEl) dayEl.textContent = days[now.getDay()];
 
-    // Dato (fx "4. Februar 2026")
-    const months = ['Januar', 'Februar', 'Marts', 'April', 'Maj', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'December'];
-    const dateStr = `${now.getDate()}. ${months[now.getMonth()]} ${now.getFullYear()}`;
-    
-    // Tid (fx "09:42")
-    const timeStr = now.toLocaleTimeString('da-DK', { hour: '2-digit', minute: '2-digit' });
+  const months = ['Januar', 'Februar', 'Marts', 'April', 'Maj', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'December'];
+  const dateStr = `${now.getDate()}. ${months[now.getMonth()]} ${now.getFullYear()}`;
+  const timeStr = now.toLocaleTimeString('da-DK', { hour: '2-digit', minute: '2-digit' });
 
-    // Sæt det sammen
-    document.getElementById('current-date-time').textContent = `${dateStr} • ${timeStr}`;
-  }
+  const dateTimeEl = document.getElementById('current-date-time');
+  if (dateTimeEl) dateTimeEl.textContent = `${dateStr} • ${timeStr}`;
+}
 
-  // Kør med det samme
-  updateDateTime();
+// Kør med det samme OG hvert minut
+updateDateTime();
+setInterval(updateDateTime, 60000);
 
-    document.addEventListener("DOMContentLoaded", () => {
-      showPage("dataCapture");
-    });
+document.addEventListener("DOMContentLoaded", () => {
+  showPage("dataCapture");
+  updateDateTime(); // Ekstra sikkerhed
+});
   </script>
 </body>
 </html>
+
 
 
 
