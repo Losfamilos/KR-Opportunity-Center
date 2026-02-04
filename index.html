@@ -323,115 +323,115 @@
 </head>
 
 <body>
-  <!-- Header -->
-  <header class="bg-white border-b border-stone-200 sticky top-0 z-50 backdrop-blur-sm bg-white/95">
-    <div class="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-16 py-5 lg:py-7 flex items-start justify-between gap-8">
-      <div class="flex items-center justify-between">
-        <div>
-          <h1 class="serif text-[1.75rem] sm:text-[2rem] text-stone-900 tracking-tight whitespace-nowrap">Bech-Bruun</h1>
-          <p class="text-[0.6875rem] font-medium text-stone-500 tracking-wider uppercase mt-0.5">Ledelsesoverblik (demo)</p>
+ 
+ <!-- Header -->
+<header class="bg-white border-b border-stone-200 sticky top-0 z-50 backdrop-blur-sm bg-white/95">
+  <div class="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-16 py-5 lg:py-7 flex items-center justify-between gap-8">
+
+    <!-- Left: Brand -->
+    <div class="flex items-center">
+      <div>
+        <h1 class="serif text-[1.75rem] sm:text-[2rem] text-stone-900 tracking-tight whitespace-nowrap">Bech-Bruun</h1>
+        <p class="text-[0.6875rem] font-medium text-stone-500 tracking-wider uppercase mt-0.5">Ledelsesoverblik (demo)</p>
+      </div>
+    </div>
+
+    <!-- Right: Everything -->
+    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-end gap-3 lg:gap-3 w-auto">
+
+      <!-- Navigation -->
+      <div class="flex items-center gap-2 bg-stone-50 border border-stone-200 rounded-xl p-1 w-full lg:w-auto flex-shrink-0">
+        <button id="navData"
+                class="btn btn-ghost !px-4 !py-2 !text-sm font-semibold rounded-lg flex-1 lg:flex-none"
+                onclick="showPage('dataCapture')">
+          Datafangst
+        </button>
+
+        <button id="navMulighed"
+                class="btn btn-ghost !px-4 !py-2 !text-sm font-semibold rounded-lg flex-1 lg:flex-none"
+                onclick="showPage('mulighed')">
+          Kommercielt overblik
+        </button>
+
+        <button id="navKunde"
+                class="btn btn-ghost !px-4 !py-2 !text-sm font-semibold rounded-lg flex-1 lg:flex-none"
+                onclick="showPage('kunde')">
+          Kundeudvikling
+        </button>
+
+        <div class="relative flex-1 lg:flex-none" id="mereMenuWrap">
+          <button id="navMere"
+                  class="btn btn-ghost !px-4 !py-2 !text-sm font-semibold rounded-lg w-full lg:w-auto justify-center flex items-center gap-2"
+                  onclick="toggleMereMenu()">
+            Mere
+            <svg class="w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+
+          <div id="mereMenu" class="hidden absolute right-0 mt-2 w-full lg:w-[280px] menu-panel z-[90]">
+            <button class="menu-item" onclick="showPage('python');">
+              Python-scriptet
+              <span class="menu-sub">Sådan udtrækker vi konto, kontakt og signaler</span>
+            </button>
+
+            <div class="h-px bg-stone-100"></div>
+
+            <button class="menu-item" onclick="showPage('crmPopulate');">
+              CRM-populating
+              <span class="menu-sub">Udkast oprettes og godkendes med ét klik</span>
+            </button>
+          </div>
         </div>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full lg:w-auto">
-        
-
-        <!-- Navigation -->
-        <div class="flex items-center gap-2 bg-stone-50 border border-stone-200 rounded-xl p-1 w-full lg:w-auto">
-
-          <button id="navData"
-                  class="btn btn-ghost !px-4 !py-2 !text-sm font-semibold rounded-lg flex-1 lg:flex-none"
-                  onclick="showPage('dataCapture')">
-            Datafangst
-          </button>
-
-          <button id="navMulighed"
-                  class="btn btn-ghost !px-4 !py-2 !text-sm font-semibold rounded-lg flex-1 lg:flex-none"
-                  onclick="showPage('mulighed')">
-            Kommercielt overblik
-          </button>
-
-          <button id="navKunde"
-                  class="btn btn-ghost !px-4 !py-2 !text-sm font-semibold rounded-lg flex-1 lg:flex-none"
-                  onclick="showPage('kunde')">
-            Kundeudvikling
-          </button>
-
-          <div class="relative flex-1 lg:flex-none" id="mereMenuWrap">
-            <button id="navMere"
-                    class="btn btn-ghost !px-4 !py-2 !text-sm font-semibold rounded-lg w-full lg:w-auto justify-center flex items-center gap-2"
-                    onclick="toggleMereMenu()">
-              Mere
-              <svg class="w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </button>
-
-            <div id="mereMenu" class="hidden absolute right-0 mt-2 w-full lg:w-[280px] menu-panel z-[90]">
-              <button class="menu-item" onclick="showPage('python');">
-                Python-scriptet
-                <span class="menu-sub">Sådan udtrækker vi konto, kontakt og signaler</span>
-              </button>
-
-              <div class="h-px bg-stone-100"></div>
-
-              <button class="menu-item" onclick="showPage('crmPopulate');">
-                CRM-populating
-                <span class="menu-sub">Udkast oprettes og godkendes med ét klik</span>
-              </button>
-            </div>
+      <!-- Partner + CRM (tight cluster) -->
+      <div class="flex items-center gap-3 w-full lg:w-auto flex-shrink-0">
+        <!-- Partner -->
+        <div class="px-3 py-1.5 bg-stone-50 rounded-lg border border-stone-200 flex-shrink-0">
+          <p class="text-[0.6rem] font-semibold text-stone-500 uppercase tracking-wider">Partner-visning</p>
+          <div class="flex items-center mt-0.5">
+            <select id="partnerSelect" class="text-xs font-semibold text-stone-900 bg-transparent outline-none w-[160px]">
+              <option value="camilla" selected>Camilla Huus</option>
+              <option value="morten">Morten L.</option>
+              <option value="sara">Sara K.</option>
+            </select>
           </div>
         </div>
 
-        <!-- Partner Switcher + Nøgletal -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full lg:w-auto">
-          <div class="w-fit px-3 py-1.5 bg-stone-50 rounded-lg border border-stone-200">
-            <p class="text-[0.65rem] font-semibold text-stone-500 uppercase tracking-wider">Partner-visning</p>
-            <div class="flex items-center space-x-2 mt-1">
-              <select id="partnerSelect" class="text-sm font-semibold text-stone-900 bg-transparent outline-none w-full">
-                <option value="camilla" selected>Camilla Huus</option>
-                <option value="morten">Morten L.</option>
-                <option value="sara">Sara K.</option>
-              </select>
-            </div>
-            </div>
-      
         <!-- CRM badge -->
-        <div class="flex items-center justify-between gap-3 px-4 py-2 bg-blue-50 rounded-lg border border-blue-100 w-full lg:w-auto flex-shrink-0">
+        <div class="flex items-center gap-3 px-4 py-2 bg-blue-50 rounded-lg border border-blue-100 flex-shrink-0">
           <div class="flex items-center gap-3">
             <div class="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></div>
             <span class="crm-badge">CRM-INTEGRATION (DEMO)</span>
           </div>
-          <span class="text-xs text-blue-700 font-medium">Synkroniseret for 2 min siden</span>
+          <span class="text-xs text-blue-700 font-medium whitespace-nowrap">Synkroniseret for 2 min siden</span>
         </div>
-  
-    </div>
+      </div>
 
-        <!-- Date + User row -->
-        <div class="flex items-center gap-6 w-full lg:w-auto flex-shrink-0">
-  <div class="text-left lg:text-right">
-    <p id="current-day" class="text-[0.6875rem] font-semibold text-stone-400 uppercase tracking-wider">Tirsdag</p>
-    <p id="current-date-time" class="text-sm font-medium text-stone-700">Indlæser...</p>
-  </div>
-</div>
+      <!-- Date + User (kept together) -->
+      <div class="flex items-center gap-6 w-full lg:w-auto flex-shrink-0">
+        <div class="text-left lg:text-right">
+          <p id="current-day" class="text-[0.6875rem] font-semibold text-stone-400 uppercase tracking-wider">Tirsdag</p>
+          <p id="current-date-time" class="text-sm font-medium text-stone-700">Indlæser...</p>
+        </div>
 
-          <div class="hidden lg:block h-10 w-px bg-stone-200"></div>
+        <div class="hidden lg:block h-10 w-px bg-stone-200"></div>
 
-          <div class="flex items-center gap-3">
-            <div class="text-right">
-              <p class="text-sm font-semibold text-stone-900">Camilla Huus</p>
-              <p class="text-xs text-stone-500">Chief Operating Officer</p>
-            </div>
-            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-800 to-teal-900 flex items-center justify-center text-white font-semibold shadow-lg ring-2 ring-white">
-              CH
-            </div>
+        <div class="flex items-center gap-3">
+          <div class="text-right">
+            <p class="text-sm font-semibold text-stone-900 whitespace-nowrap">Camilla Huus</p>
+            <p class="text-xs text-stone-500 whitespace-nowrap">Chief Operating Officer</p>
+          </div>
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-800 to-teal-900 flex items-center justify-center text-white font-semibold shadow-lg ring-2 ring-white">
+            CH
           </div>
         </div>
-
       </div>
-    </div>
-  </header>
 
+    </div>
+  </div>
+</header>
   <!-- Main -->
   <div class="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-16 py-5 lg:py-7 grid grid-cols-1 lg:grid-cols-[auto,1fr] gap-4 lg:gap-10 items-center">
 
@@ -1881,6 +1881,7 @@ document.addEventListener("DOMContentLoaded", () => {
   </script>
 </body>
 </html>
+
 
 
 
