@@ -416,10 +416,11 @@
 
         <!-- Date + User row -->
         <div class="flex items-center justify-between gap-3 w-full lg:w-auto">
-          <div class="text-left lg:text-right">
-            <p class="text-[0.6875rem] font-semibold text-stone-400 uppercase tracking-wider">Tirsdag</p>
-            <p class="text-sm font-medium text-stone-700">13. Januar 2026 • 09:42</p>
-          </div>
+  <div class="text-left lg:text-right">
+    <p id="current-day" class="text-[0.6875rem] font-semibold text-stone-400 uppercase tracking-wider">Tirsdag</p>
+    <p id="current-date-time" class="text-sm font-medium text-stone-700">Indlæser...</p>
+  </div>
+</div>
 
           <div class="hidden lg:block h-10 w-px bg-stone-200"></div>
 
@@ -1859,6 +1860,26 @@ push_drafts_to_crm(drafts)</code></pre>
       document.body.appendChild(el);
       setTimeout(() => el.remove(), 3200);
     }
+    function updateDateTime() {
+    const now = new Date();
+    
+    // Ugedag (fx "Tirsdag")
+    const days = ['Søndag', 'Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag'];
+    document.getElementById('current-day').textContent = days[now.getDay()];
+
+    // Dato (fx "4. Februar 2026")
+    const months = ['Januar', 'Februar', 'Marts', 'April', 'Maj', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'December'];
+    const dateStr = `${now.getDate()}. ${months[now.getMonth()]} ${now.getFullYear()}`;
+    
+    // Tid (fx "09:42")
+    const timeStr = now.toLocaleTimeString('da-DK', { hour: '2-digit', minute: '2-digit' });
+
+    // Sæt det sammen
+    document.getElementById('current-date-time').textContent = `${dateStr} • ${timeStr}`;
+  }
+
+  // Kør med det samme
+  updateDateTime();
 
     document.addEventListener("DOMContentLoaded", () => {
       showPage("dataCapture");
@@ -1866,4 +1887,5 @@ push_drafts_to_crm(drafts)</code></pre>
   </script>
 </body>
 </html>
+
 
