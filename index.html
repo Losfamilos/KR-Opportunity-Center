@@ -328,12 +328,12 @@
     <div class="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-16 py-5 lg:py-7 flex items-start justify-between gap-8">
       <div class="flex items-center justify-between">
         <div>
-          <h1 class="serif text-[1.75rem] sm:text-[2rem] text-stone-900 tracking-tight">Bech-Bruun</h1>
+          <h1 class="serif text-[1.75rem] sm:text-[2rem] text-stone-900 tracking-tight whitespace-nowrap">Bech-Bruun</h1>
           <p class="text-[0.6875rem] font-medium text-stone-500 tracking-wider uppercase mt-0.5">Ledelsesoverblik (demo)</p>
         </div>
       </div>
 
-      <div class="flex flex-wrap items-center gap-4 ml-auto">
+      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-end gap-3 lg:gap-6 w-full min-w-0">
 
         <!-- Navigation -->
         <div class="flex items-center gap-2 bg-stone-50 border border-stone-200 rounded-xl p-1 w-full lg:w-auto">
@@ -432,7 +432,7 @@
   </header>
 
   <!-- Main -->
-  <main class="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-16 py-8 lg:py-14">
+  <div class="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-16 py-5 lg:py-7 grid grid-cols-1 lg:grid-cols-[auto,1fr] gap-4 lg:gap-10 items-center">
 
     <!-- ====================== PAGE: DATAFANGST (FORSIDE) ====================== -->
     <div id="pageData" class="hidden">
@@ -1880,6 +1880,7 @@ document.addEventListener("DOMContentLoaded", () => {
   </script>
 </body>
 </html>
+
 
 
 
