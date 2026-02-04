@@ -512,10 +512,18 @@
         <div class="card rounded-2xl p-6 sm:p-8">
           <p class="text-xs font-semibold text-stone-500 uppercase tracking-wider">Trin 1</p>
           <h3 class="serif text-2xl text-stone-900 mt-2">Vi henter signaler</h3>
-          <p class="text-sm text-stone-600 mt-2 leading-relaxed">
-            Systemet kobler sig på kendte kilder og henter <strong>ændringer</strong> og <strong>mønstre</strong>.
-            Ikke lange dokumenter – men “hvad er nyt?” og “hvad stikker ud?”.
-          </p>
+         <p class="text-sm text-stone-600 mt-2 leading-relaxed">
+  Systemet kobler sig på kendte kilder og henter <strong>ændringer</strong> og <strong>mønstre</strong>.
+  Ikke lange dokumenter – men “hvad er nyt?” og “hvad stikker ud?”.
+</p>
+
+<div class="mt-4 bg-stone-50 border border-stone-200 rounded-xl p-4">
+  <p class="text-xs font-semibold text-stone-500 uppercase tracking-wider">Teknisk note</p>
+  <p class="text-sm text-stone-700 mt-1 leading-relaxed">
+    Baseret på automatiserede scripts <strong>(Python)</strong>, der parser sagsmapper og fakturaer og udleder
+    relevante kommercielle triggers (fx ændret aktivitet, nye nøglepersoner, skift i praksisområde).
+  </p>
+</div>
           <div class="flex flex-wrap gap-2 mt-4">
             <span class="source-tag">Sager</span>
             <span class="source-tag">Tid</span>
@@ -577,6 +585,63 @@
             <p class="text-xs text-stone-500 mt-1">viser ændringer løbende</p>
           </div>
         </div>
+
+        <!-- Workflow diagram -->
+<div class="mt-6 bg-white border border-stone-200 rounded-2xl p-5 sm:p-6">
+  <div class="flex items-center justify-between flex-wrap gap-2 mb-4">
+    <p class="text-xs font-semibold text-stone-500 uppercase tracking-wider">Workflow (1 minut)</p>
+    <span class="pill-safe">Ustruktureret → CRM-klart</span>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-5 gap-3 items-stretch">
+    <div class="rounded-xl border border-stone-200 bg-stone-50 p-4">
+      <p class="text-xs font-semibold text-stone-500 uppercase tracking-wider">Input</p>
+      <p class="text-sm font-semibold text-stone-900 mt-1">Sagsmapper & fakturaer</p>
+      <p class="text-xs text-stone-600 mt-1">+ mails (metadata) + registre</p>
+    </div>
+
+    <div class="hidden md:flex items-center justify-center text-stone-300">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+      </svg>
+    </div>
+
+    <div class="rounded-xl border border-stone-200 bg-white p-4">
+      <p class="text-xs font-semibold text-stone-500 uppercase tracking-wider">Parsing</p>
+      <p class="text-sm font-semibold text-stone-900 mt-1">Python scripts</p>
+      <p class="text-xs text-stone-600 mt-1">udtrækker CVR, kontakter, beløb, emner</p>
+    </div>
+
+    <div class="hidden md:flex items-center justify-center text-stone-300">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+      </svg>
+    </div>
+
+    <div class="rounded-xl border border-stone-200 bg-white p-4">
+      <p class="text-xs font-semibold text-stone-500 uppercase tracking-wider">Match & kvalitet</p>
+      <p class="text-sm font-semibold text-stone-900 mt-1">Dedupe + forklaring</p>
+      <p class="text-xs text-stone-600 mt-1">kilder • dato • dækning • mangler</p>
+    </div>
+
+    <div class="hidden md:flex items-center justify-center text-stone-300">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+      </svg>
+    </div>
+
+    <div class="rounded-xl border border-emerald-200 bg-emerald-50 p-4">
+      <p class="text-xs font-semibold text-emerald-700 uppercase tracking-wider">Output</p>
+      <p class="text-sm font-semibold text-emerald-900 mt-1">CRM-udkast</p>
+      <p class="text-xs text-emerald-800 mt-1">Godkend (1 klik) / Overvågning (0 min)</p>
+    </div>
+  </div>
+
+  <p class="text-xs text-stone-500 mt-4">
+    Pointen: Partneren tager kun beslutningen — systemet gør alt forarbejdet og logger i CRM.
+  </p>
+</div>
+
 
         <div class="mt-8 grid grid-cols-1 lg:grid-cols-5 gap-4 items-stretch">
           <div class="border border-stone-200 rounded-xl p-5 bg-stone-50">
@@ -1801,3 +1866,4 @@ push_drafts_to_crm(drafts)</code></pre>
   </script>
 </body>
 </html>
+
