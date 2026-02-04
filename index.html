@@ -1761,30 +1761,32 @@ push_drafts_to_crm(drafts)</code></pre>
       }
     }
 
-    const partnerSelect = document.getElementById("partnerSelect");
-    if (partnerSelect) {
-      partnerSelect.addEventListener("change", (e) => {
-        const p = partners[e.target.value];
-        document.getElementById("partnerUpside").textContent = p.upside;
-        document.getElementById("partnerTimeSaved").textContent = "• " + p.timeSaved;
-        setRagUI(p.rag);
+  const partnerSelect = document.getElementById("partnerSelect");
+if (partnerSelect) {
+  const applyPartner = (key) => {
+    const p = partners[key];
+    if (!p) return;
 
-        const crmConf = document.getElementById("crmRagConfidence");
-        const crmStat = document.getElementById("crmRagStatus");
-        if (crmConf) crmConf.textContent = p.rag.confidence + "%";
-        if (crmStat) crmStat.textContent = daStatus(p.rag.status);
-      });
+    // Opdater kun hvis elementerne findes (så siden ikke crasher hvis du har slettet dem)
+    const upsideEl = document.getElementById("partnerUpside");
+    const timeEl   = document.getElementById("partnerTimeSaved");
+    if (upsideEl) upsideEl.textContent = p.upside;
+    if (timeEl) timeEl.textContent = "• " + p.timeSaved;
 
-      const initP = partners[partnerSelect.value];
-      document.getElementById("partnerUpside").textContent = initP.upside;
-      document.getElementById("partnerTimeSaved").textContent = "• " + initP.timeSaved;
-      setRagUI(initP.rag);
+    setRagUI(p.rag);
 
-      const crmConf = document.getElementById("crmRagConfidence");
-      const crmStat = document.getElementById("crmRagStatus");
-      if (crmConf) crmConf.textContent = initP.rag.confidence + "%";
-      if (crmStat) crmStat.textContent = daStatus(initP.rag.status);
-    }
+    const crmConf = document.getElementById("crmRagConfidence");
+    const crmStat = document.getElementById("crmRagStatus");
+    if (crmConf) crmConf.textContent = p.rag.confidence + "%";
+    if (crmStat) crmStat.textContent = daStatus(p.rag.status);
+  };
+
+  partnerSelect.addEventListener("change", (e) => applyPartner(e.target.value));
+
+  // initial render
+  applyPartner(partnerSelect.value);
+}
+
 
     function openRagDrawer() { document.getElementById("ragDrawer").classList.remove("hidden"); }
     function closeRagDrawer() { document.getElementById("ragDrawer").classList.add("hidden"); }
@@ -1879,6 +1881,7 @@ document.addEventListener("DOMContentLoaded", () => {
   </script>
 </body>
 </html>
+
 
 
 
