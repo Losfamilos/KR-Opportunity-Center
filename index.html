@@ -326,24 +326,24 @@
  
  <!-- Header -->
 <header class="bg-white border-b border-stone-200 sticky top-0 z-50 backdrop-blur-sm bg-white/95">
-  <div class="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-16 py-5 lg:py-7 flex items-center justify-between gap-8">
+  <div class="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-16 py-5 lg:py-7 flex items-center justify-between gap-6 xl:gap-8">
 
     <!-- Left: Brand -->
-    <div class="flex items-center flex-shrink-0">
-      <div class="flex items-center gap-4">
+    <div class="flex items-center flex-shrink-0 min-w-0">
+      <div class="flex items-center gap-4 min-w-0">
         <img
           src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgUAAABhCAIAAADJBEU/AAAgAElEQVR4Ae19z2sUyft//wlKbmMgDDMwQJbECBZDaDCCN0KI4Q2W4IB4QKxEcMTBMXh2Dg6IuI2H4OjFuTF4cYj8AQ6Ojqf3dO9V1dXdXV19fT09PT09PR0fP2eqn7r3n4v+tlXXb11XfXv1VXXq6uqqql6q2mVt7W1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW3t/wJzM8rjvR+6YwAAAABJRU5ErkJggg=="
           alt="Kromann Reumert"
-          class="h-12 sm:h-14 lg:h-16 w-auto object-contain"
+          class="h-10 sm:h-12 lg:h-14 w-auto object-contain flex-shrink-0"
         />
-        <div>
-          <p class="text-[0.6875rem] font-medium text-stone-500 tracking-wider uppercase mt-0.5">Ledelsesoverblik (demo)</p>
+        <div class="min-w-0">
+          <p class="text-[0.6875rem] font-medium text-stone-500 tracking-wider uppercase mt-0.5 whitespace-nowrap">Ledelsesoverblik (demo)</p>
         </div>
       </div>
     </div>
 
     <!-- Right: Everything -->
-    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-end gap-3 lg:gap-3 w-auto">
+    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-end gap-3 lg:gap-3 w-auto min-w-0 min-w-0">
 
       <!-- Navigation -->
       <div class="flex items-center gap-2 bg-stone-50 border border-stone-200 rounded-xl p-1 w-full lg:w-auto flex-shrink-0">
@@ -397,7 +397,7 @@
         <div class="px-3 py-1.5 bg-stone-50 rounded-lg border border-stone-200 flex-shrink-0">
           <p class="text-[0.6rem] font-semibold text-stone-500 uppercase tracking-wider">Partner-visning</p>
           <div class="flex items-center mt-0.5">
-            <select id="partnerSelect" class="text-xs font-semibold text-stone-900 bg-transparent outline-none w-[190px]">
+            <select id="partnerSelect" class="text-xs font-semibold text-stone-900 bg-transparent outline-none w-[165px]">
               <option value="jeppe" selected>Jeppe Buskov</option>
               <option value="christina">Christina B. Geertsen</option>
               <option value="soren">Søren Skibsted</option>
@@ -416,7 +416,7 @@
       </div>
 
       <!-- Date + User (kept together) -->
-      <div class="flex items-center gap-6 w-full lg:w-auto flex-shrink-0">
+      <div class="flex items-center gap-4 xl:gap-6 w-full lg:w-auto flex-shrink-0">
         <div class="text-left lg:text-right">
           <p id="current-day" class="text-[0.6875rem] font-semibold text-stone-400 uppercase tracking-wider">Tirsdag</p>
           <p id="current-date-time" class="text-sm font-medium text-stone-700">Indlæser...</p>
@@ -424,15 +424,15 @@
 
         <div class="hidden lg:block h-10 w-px bg-stone-200"></div>
 
-        <div class="flex items-center gap-3">
-            <div class="text-right">
-              <p class="text-sm font-semibold text-stone-900 whitespace-nowrap">Jeppe Buskov</p>
-              <p class="text-xs text-stone-500 whitespace-nowrap">Partner</p>
-            </div>
-            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center text-white font-semibold shadow-lg ring-2 ring-white">
-              JB
-            </div>
+        <div class="flex items-center gap-3 flex-shrink-0">
+          <div class="text-right hidden 2xl:block">
+            <p class="text-sm font-semibold text-stone-900 whitespace-nowrap">Jeppe Buskov</p>
+            <p class="text-xs text-stone-500 whitespace-nowrap">Partner</p>
           </div>
+          <div class="w-10 h-10 xl:w-11 xl:h-11 rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center text-white text-sm font-semibold shadow-lg ring-2 ring-white">
+            JB
+          </div>
+        </div>
       </div>
 
     </div>
